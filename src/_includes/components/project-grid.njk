@@ -2,7 +2,7 @@
   <h2 class="project__heading">Recent projects</h2>
   <div class="project-grid">
     {% asyncEach project in collections.projects %}
-      {% include "project-card.njk" %}
+      {% include "components/project-card.njk" %}
     {% endeach %}
   </div>
 </section>
