@@ -164,11 +164,13 @@
   .hero__text {
     margin-bottom: 1rem;
     color: var(--black-soft);
+    font-size: 1.5rem;
   }
   
   .hero__text--lead {
-    font-weight: 500;
-    font-size: 1.5rem;
+    font-weight: 750;
+    font-size: 2rem;
+    color: var(--black-soft);
   }
   
   .hero__text--highlight {
@@ -179,7 +181,7 @@
   
   .hero__text--emphasis {
     font-weight: bold;
-    font-size: 1.125rem;
+    font-size: 1.625rem;
   }
   
   .hero__link {
@@ -196,7 +198,7 @@
   .services__heading {
     margin-bottom: 2rem;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 750;
     text-align: center;
     color: var(--black-soft);
   }
@@ -317,6 +319,13 @@
     justify-content: center; /* Horizontally center */
     align-items: center; /* Vertically center */
     height: 100vh; /* Full viewport height */
+  }
+
+  .contact-heading {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--black-soft);
   }
   
   .contact-index__link {
