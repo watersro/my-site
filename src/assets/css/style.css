@@ -5,15 +5,15 @@
     --carbon-grey: #a9a9a9;
     --black-soft: #414141;
     --watermelon: #ff3b3f;
-    --blue-sky: #caebf2;
+    --background-col: #caebf2;
     --slate-300: #cbd5e1;
     --slate-600: #475569;
     --amber-100: #fef3c7;
     --amber-600: #d97706;
     --amber-700: #b45309;
     --amber-800: #92400e;
-    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-      0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05),
+      0 4px 6px -4px rgb(0 0 0 / 0.05);
   }
   
   /* CSS Normalization */
@@ -42,7 +42,7 @@
     font-family: "Inter", sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: var(--blue-sky)
+    background-color: var(--background-col)
   }
   
   ul,
@@ -87,12 +87,16 @@
   /* Header Styles */
   
   .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 4rem;
     padding: 1rem 1.5rem;
+    background-color: rgba(202, 235, 242, 0.9);
   }
   
   .header__title {
@@ -144,7 +148,74 @@
     font-weight: 700;
     color: var(--black-soft);
   }
+  /* Hero Styles */
+
+  .hero {
+    height: 90vh;
+  }
+
+  .hero__card {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 0;
+    flex: 1;
+  }
   
+  .hero__text {
+    margin-bottom: 1rem;
+    color: var(--black-soft);
+  }
+  
+  .hero__text--lead {
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  
+  .hero__text--highlight {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--black-soft);
+  }
+  
+  .hero__text--emphasis {
+    font-weight: bold;
+    font-size: 1.125rem;
+  }
+  
+  .hero__link {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  /* Services */
+
+  .services {
+    height: 90vh;
+  }
+  
+  .services__heading {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--black-soft);
+  }
+
+  .service-card {
+    box-shadow: var(--box-shadow);
+    border-radius: 0.375rem;
+    overflow: hidden;
+  }
+
+  .service-card__body {
+    padding: 1rem;
+  }
+
+  .service-card__title {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
   /* Profile Styles */
   .profile {
     display: flex;
@@ -239,6 +310,26 @@
     color: var(--black-soft);
   }
   
+  /* Contact on Indez*/
+
+  .contact-index {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .contact-index__link {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    color: var(--black-soft);
+  }
+
+  .contact-index__link:hover {
+    text-decoration: underline;
+  }
+
   /* Project Styles */
   
   .projects {
@@ -463,5 +554,21 @@
   
     .profile__image-wrapper img {
       margin: 4rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: row; /* Ensure items are horizontally aligned */
+      justify-content: space-between; /* Space between the title and links */
+      align-items: center; /* Align items vertically */
+    }
+  
+    .header__title {
+      margin-bottom: 0; /* Remove bottom margin */
+    }
+  
+    .header__links {
+      margin-top: 0; /* Remove top margin */
     }
   }
