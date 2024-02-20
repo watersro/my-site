@@ -3,21 +3,35 @@ title: "Eleventy Portfolio"
 layout: "layouts/base.njk"
 ---
 
-<h2 class="heading--main text-center">Want to get in touch?</h2>
-<p class="contact__sub-heading text-center">I'm always open to new opportunities and projects. </p>
+  <h2 class="heading--main text-center">Want to get in touch?</h2>
+  <p class="contact__sub-heading text-center">I'm always open to new opportunities and projects. 
+    Text, call, email or use the contact form below to get started</p>
+    <br />
+  <p class="contact__sub-heading text-center">
+    <a class=" contact-index__link" href="mailto:hello@romanwaters.com">
+    hello@romanwaters.com
+    </a>
+  </p>
+  <p class="contact__sub-heading text-center">
+    <a class=" contact-index__link" href="tel:+447723459319">
+      07723 459319
+    </a>
+  </p>
+  <form class="form" name="contact" action="/success" method="POST" data-netlify="true">
+    <div class="form__section">
+      <label class="form__label" for="yourName">Name</label>
+      <input class="form__input" name="name" type="text" id="yourName" required="true">
+    </div>
+    <div class="form__section">
+      <label class="form__label" for="yourEmail">Email</label>
+      <input class="form__input" name="email" type="email"  id="yourEmail" required="true">
+    </div>
+    <div class="form__section">
+      <label class="form__label" for="message">Message</label>
+      <textarea class="form__input" name="message" id="message" rows="4" required="true"></textarea>
+    </div>
+      <button class="form__button" type="submit">Let's talk</button>
+  </form>
+</div>
 
-<form class="form" name="contact" action="/success" method="POST" data-netlify="true">
-  <div class="form__section">
-    <label class="form__label" for="yourName">Name</label>
-    <input class="form__input" name="name" type="text" id="yourName" required="true">
-  </div>
-  <div class="form__section">
-    <label class="form__label" for="yourEmail">Email</label>
-    <input class="form__input" name="email" type="email"  id="yourEmail" required="true">
-  </div>
-  <div class="form__section">
-    <label class="form__label" for="message">Message</label>
-    <textarea class="form__input" name="message" id="message" rows="4" required="true"></textarea>
-  </div>
-    <button class="form__button" type="submit">Let's talk</button>
-</form>
+  

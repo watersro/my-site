@@ -76,12 +76,24 @@
     padding: 0 1.5rem;
   }
   
+  .header-container {
+    max-width: 90vw;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
   .content {
     flex: 1 0 auto;
   }
   
   .text-center {
     text-align: center;
+  }
+  
+  .half-page {
+    flex: 1 1 50%; /* Each section takes up half of the page */
+    display: flex;
+    flex-direction: column;
   }
   
   /* Header Styles */
@@ -126,7 +138,7 @@
     height: 2px;
     width: 100%;
     position: absolute;
-    background-color: var(--watermelon);
+    background-color: var(--black-soft);
     transform: scaleX(0);
     transition: transform 0.3s ease 0s;
   }
@@ -169,7 +181,7 @@
   
   .hero__text--lead {
     font-weight: 750;
-    font-size: 2rem;
+    font-size: 3.5rem;
     color: var(--black-soft);
   }
   
@@ -192,7 +204,11 @@
   /* Services */
 
   .services {
-    height: 90vh;
+    height: 70vh;
+  }
+  
+  #services {
+    scroll-margin-top: 1vh;
   }
   
   .services__heading {
@@ -207,6 +223,10 @@
     box-shadow: var(--box-shadow);
     border-radius: 0.375rem;
     overflow: hidden;
+    width: 24%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
   }
 
   .service-card__body {
@@ -282,6 +302,13 @@
     color: var(--black-soft);
   }
   
+  .technologies__sub-heading {
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+    color: var(--black-soft);
+    text-align: center;
+  }
+
   .technologies__list {
     width: 100%;
     max-width: 36rem;
@@ -564,6 +591,7 @@
     .profile__image-wrapper img {
       margin: 4rem;
     }
+    
   }
 
   @media (max-width: 768px) {
@@ -571,13 +599,53 @@
       flex-direction: row; /* Ensure items are horizontally aligned */
       justify-content: space-between; /* Space between the title and links */
       align-items: center; /* Align items vertically */
+      margin-bottom: 1.5rem;
     }
-  
+
     .header__title {
       margin-bottom: 0; /* Remove bottom margin */
     }
   
     .header__links {
       margin-top: 0; /* Remove top margin */
+    }
+
+    .hero {
+      height: 90vh;
+      margin-left: auto;
+    }
+
+    .hero__card {
+      display: flex;
+      flex-direction: column;
+      padding: 0rem 0;
+      flex: 1;
+    }
+
+    .hero__text--lead {
+      font-weight: 750;
+      font-size: 2rem;
+      color: var(--black-soft);
+    }
+
+    .services {
+      height: 90vh;
+      margin-bottom: auto;
+    }
+    .service-card {
+      box-shadow: var(--box-shadow);
+      border-radius: 0.375rem;
+      overflow: hidden;
+      width: auto;
+      display:inherit;
+      vertical-align: inherit;
+    }
+
+    .services__heading {
+      margin-top: 2rem;
+    }
+    
+    .technologies {
+      margin-top: 24rem;
     }
   }
