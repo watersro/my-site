@@ -82,7 +82,7 @@
   }
   
   .header-container {
-    max-width: 90vw;
+    max-width: 100vw;
     margin: 0 auto;
     padding: 0 1.5rem;
     transition: background-color 0.4s ease;
@@ -129,6 +129,7 @@
   .header {
     position: sticky;
     top: 0;
+    width: 100%;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -136,6 +137,7 @@
     flex-wrap: wrap;
     margin-bottom: 4rem;
     padding: 1rem 1.5rem;
+    flex-direction: row;
   }
   
   
@@ -152,6 +154,7 @@
     font-size: 1.125rem;
     font-weight: 600;
     color: #000;
+    transition: background-color 0.4s ease;
   }
   
   .header__link {
@@ -188,6 +191,41 @@
     font-weight: 700;
     color: var(--black-soft);
   }
+
+  .hamburger {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px; /* Space between bars */
+  }
+  
+  .hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--black-soft);
+    transition: 0.4s;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
   /* Hero Styles */
 
   .hero {
@@ -661,7 +699,16 @@
     }
   
     .header__links {
-      margin-top: 0; /* Remove top margin */
+      position: absolute;
+    right: 20px; /* Align to the right side, under hamburger */
+    top: 60px; /* Adjust based on your header's height */
+    flex-direction: column;
+    align-items: flex-end;
+    display: none; /* Hide links initially */
+    }
+
+    .header__links.active {
+      display: flex;
     }
 
     .hero {
@@ -707,5 +754,32 @@
     
     .technologies {
       margin-top: 24rem;
+    }
+
+    .hamburger {
+      display: flex;
+      justify-content: flex-end;
+    }
+  
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      padding-top: 20px;
+    }
+  
+    .nav-menu.active {
+      display: flex;
+    }
+
+    .navbar {
+      /* Stack items vertically */
+      justify-content: space-between;/* Align items to the right */
+    }
+  
+    .header__link, .nav-link {
+      display: block;
+      text-align: center;
+      padding: 10px;
     }
   }
