@@ -17,12 +17,12 @@
   <title>{{ title }}</title>
 </head>
 <body>
-  <div class="content">
-    {% include "components/header.njk" %}
-    <main class="main container">
+    <div class="">
+      {% include "components/header.njk" %}
+    
       {{ content | safe }}
+    </div>
     </main>
-  </div>
   {% include "components/footer.njk" %}
   <script src="/assets/js/main.js"></script>
 </body>
