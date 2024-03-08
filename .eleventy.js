@@ -19,15 +19,19 @@ async function imageShortcode(src, alt, sizes) {
 }
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("./src/assets/css/");
+  eleventyConfig.addWatchTarget("style.out.css")
+  eleventyConfig.addWatchTarget("./src/");
   eleventyConfig.addWatchTarget("./src/assets/css/");
   eleventyConfig.addPassthroughCopy("./src/assets/js");
   eleventyConfig.addPassthroughCopy("./src/assets/images/");
-  eleventyConfig.addPassthroughCopy({ "./src/assets/favicons": "/" });
+  eleventyConfig.addPassthroughCopy({ "./src/assets/favicons": "/" })
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   eleventyConfig.addNunjucksAsyncShortcode("EleventyImage", imageShortcode);
+  eleventyConfig.addPassthroughCopy({
+    "style.out.css": "/assets/css/style.css",
+  });
 
 
     return {
