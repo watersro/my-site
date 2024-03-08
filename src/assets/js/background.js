@@ -14,14 +14,13 @@ $(function() {
       var headerColor = $panel.filter(function() {
           return $(this).position().top <= scroll && $(this).position().top + $(this).outerHeight() > scroll;
       }).data('color');
-  
       // Function to update the header and nav links styling
       function updateStyling(element) {
           // Remove existing color and opacity classes
           element.removeClass(function (index, css) {
               return (css.match (/(^|\s)color-\S+|opacity-\S+/g) || []).join(' ');
           });
-  
+
           // Add new color class and opacity
           if (headerColor) {
               element.addClass('color-' + headerColor);
