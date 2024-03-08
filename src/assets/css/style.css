@@ -1,4 +1,6 @@
-/* CSS Variables */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
     --neutral-slate: #efefef;
@@ -28,7 +30,8 @@
   
   html,
   body {
-    height: 100%;
+    width: 100%;
+    height: auto;
   }
   
   html:focus-within {
@@ -71,7 +74,7 @@
   
   /* Utility Classes */
   .opacity-80 {
-    opacity: 0.8; /* Adjust the opacity value as needed */
+    opacity: 0.9; /* Adjust the opacity value as needed */
   }
   
   
@@ -79,6 +82,12 @@
     max-width: 64rem;
     margin: 0 auto;
     padding: 0 1.5rem;
+  }
+
+  .container2 {
+    width: 100%;
+    height: 100%;
+    
   }
   
   .header-container {
@@ -127,10 +136,11 @@
   /* Header Styles */
   
   .header {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 50;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -138,29 +148,29 @@
     margin-bottom: 4rem;
     padding: 1rem 1.5rem;
     flex-direction: row;
+    opacity: 0.9;
   }
   
   
   .header__title {
-    position: relative;
+    
     margin-bottom: 1rem;
     margin-right: 1rem;
-    color: var(FFF);
+    color: var(#FFF);
   }
   
   .header__links {
     display: flex;
-    gap: 2rem;
-    font-size: 1.125rem;
-    font-weight: 600;
+    gap: 0.5rem;
     color: #000;
+    /* background-color: var(--background-col); */
+    opacity: 0.9;
     transition: background-color 0.4s ease;
-    margin-right: 3vw;
+
   }
   
   .header__link {
     position: relative;
-    font-size: 1.125rem;
   }
   
   .header__link::after {
@@ -273,11 +283,7 @@
   .services {
     height: 70vh;
   }
-  
-  #services {
-    scroll-margin-top: 1vh;
-  }
-  
+    
   .services__heading {
     margin-bottom: 2rem;
     font-size: 2.5rem;
@@ -693,6 +699,7 @@
       justify-content: space-between; /* Space between the title and links */
       align-items: center; /* Align items vertically */
       margin-bottom: 1.5rem;
+      position: sticky;
     }
 
     .header__title {
@@ -701,11 +708,12 @@
   
     .header__links {
       position: absolute;
-    right: 20px; /* Align to the right side, under hamburger */
-    top: 60px; /* Adjust based on your header's height */
-    flex-direction: column;
-    align-items: flex-end;
-    display: none; /* Hide links initially */
+      right: 0vw; /* Align to the right side, under hamburger */
+      top: 4rem; /* Adjust based on your header's height */
+      flex-direction: column;
+      align-items: flex-end;
+      display: none; /* Hide links initially */
+      margin-right: 0rem;
     }
 
     .header__links.active {
@@ -781,6 +789,5 @@
     .header__link, .nav-link {
       display: block;
       text-align: center;
-      padding: 10px;
     }
   }
