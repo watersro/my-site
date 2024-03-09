@@ -1,49 +1,47 @@
 $(function() {
+    // Check if it's the index page based on the data attribute of the div
+    var isIndexPage = $('[data-page-type="index"]').length > 0;
+  
     $(window).scroll(function() {
-      // Selectors
       var $window = $(window),
-          $body = $('body'),
-          $panel = $('.panel'),
           $header = $('.header'),
-          $navLinks = $('.header__links'); // Selector for the navigation links container
+          $navLinks = $('.header__links');
   
-      // Calculate the scroll position to trigger the color change
-      var scroll = $window.scrollTop() + ($window.height() * 0.33);
+      if (isIndexPage) {
+        var $body = $('body'),
+            $panel = $('.panel'),
+            scroll = $window.scrollTop() + ($window.height() * 0.33),
+            headerColor = $panel.filter(function() {
+              return $(this).position().top <= scroll && $(this).position().top + $(this).outerHeight() > scroll;
+            }).data('color');
   
-      // Determine the color class based on the panel in view
-      var headerColor = $panel.filter(function() {
-          return $(this).position().top <= scroll && $(this).position().top + $(this).outerHeight() > scroll;
-      }).data('color');
-      // Function to update the header and nav links styling
-      function updateStyling(element) {
-          // Remove existing color and opacity classes
-          element.removeClass(function (index, css) {
-              return (css.match (/(^|\s)color-\S+|opacity-\S+/g) || []).join(' ');
+        function updateStyling(element) {
+          element.removeClass(function(index, css) {
+            return (css.match(/(^|\s)color-\S+|opacity-\S+/g) || []).join(' ');
           });
-
-          // Add new color class and opacity
+  
           if (headerColor) {
-              element.addClass('color-' + headerColor);
-              element.addClass('opacity-80');
+            element.addClass('color-' + headerColor);
+            element.addClass('opacity-80');
           }
-      }
+        }
   
-      // Update styling for both header and nav links
-      updateStyling($header);
-      updateStyling($navLinks); // Apply the same dynamic styling to nav links
+        updateStyling($header);
+        updateStyling($navLinks);
   
-      // Additional code for adding class to body based on scroll position
-      $panel.each(function () {
+        $panel.each(function() {
           var $this = $(this);
-          
           if ($this.position().top <= scroll && $this.position().top + $this.outerHeight() > scroll) {
-              $body.removeClass(function (index, css) {
-                  return (css.match (/(^|\s)color-\S+/g) || []).join(' ');
-              });
-              
-              $body.addClass('color-' + $this.data('color'));
+            $body.removeClass(function(index, css) {
+              return (css.match(/(^|\s)color-\S+/g) || []).join(' ');
+            });
+  
+            $body.addClass('color-' + $this.data('color'));
           }
-      });    
-    }).scroll();  // Trigger the scroll event on page load
+        });
+      } else {
+        $('.header, .header__links').css('background-color', 'var(--background-col)');
+      }
+    }).scroll();
   });
   
