@@ -493,9 +493,7 @@
   }
   
   .project-card {
-    box-shadow: var(--box-shadow);
-    border-radius: 0.375rem;
-    overflow: hidden;
+    background-color: #6d7e82;
   }
   
   .project-card__image-wrapper img {
@@ -570,10 +568,7 @@
     margin: 0 auto 4rem auto;
   }
   
-  .project {
-    margin-bottom: 4rem;
-  }
-  
+    
   .project__image-wrapper {
     margin-bottom: 1.5rem;
   }
