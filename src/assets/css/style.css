@@ -135,6 +135,18 @@
     background-color: #F3C7FF;
   }
   
+  .prose p {
+    color: #000;
+  }
+  body .prose h1,
+  body .prose h2,
+  body .prose h3,
+  body .prose h4,
+  body .prose h5,
+  body .prose h6 {
+    color: #111827;
+    font-weight: 700;
+  }
   /* Header Styles */
   
   .header {

@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "npm-run-all --parallel serve watch:css",
-  "serve": "eleventy --serve",
-  "watch:css": "tailwindcss -i ./src/assets/css/style.css -o ./public/assets/css/style.css --watch",
-  "build": "eleventy && tailwindcss -i ./src/assets/css/style.css -o ./public/assets/css/style.css"
+    "serve": "eleventy --serve",
+    "watch:css": "tailwindcss -i ./src/assets/css/style.css -o ./public/assets/css/style.css --watch",
+    "build": "eleventy && tailwindcss -i ./src/assets/css/style.css -o ./public/assets/css/style.css"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@11ty/eleventy-img": "^4.0.2",
+    "@tailwindcss/typography": "^0.5.10",
     "sass": "^1.71.0"
   }
 }
