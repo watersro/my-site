@@ -2,12 +2,12 @@
 layout: "layouts/base.njk"
 ---
 
-<div class="project">
-  <h2 class="project__heading">{{ title }}</h2>
-  <div class="project__image-wrapper">
-    {% EleventyImage image, imageAlt, "(min-width: 30em) 50vw, 100vw" %}
+<div class="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+  <h2 class="text-3xl md:text-4xl font-bold mb-4">{{ headline }}</h2>
+  <div class="my-6">
+      <img class="w-full h-auto rounded-md shadow-lg" src="{{ image }}" alt="{{ imageAlt }}">
   </div>
-  <div class="project__content prose">
+  <div class="prose md:prose-lg max-w-none text-red-500">
     {{ content | safe }}
   </div>
 </div>

@@ -12,11 +12,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="{{'/assets/css/style.css' | url | safe}}">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="/assets/js/background.js"></script>
   <title>{{ title }}</title>
 </head>
-<body>
+<body class="font-body">
     <div class="">
       {% include "components/header.njk" %}
     
@@ -24,6 +22,9 @@
     </div>
     </main>
   {% include "components/footer.njk" %}
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/assets/js/background.js"></script>
   <script src="/assets/js/main.js"></script>
 </body>
 </html>

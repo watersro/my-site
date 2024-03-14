@@ -1,0 +1,12 @@
+---
+title: "Portfolio | Freelance Web Developer | Roman Waters"
+layout: "layouts/base.njk"
+---
+<section class="p-5">
+  <h2 class="text-3xl text-gray-900 md:text-4xl font-bold text-center mb-6">Portfolio</h2>
+  <div class="grid mx-6 md:grid-cols-4 gap-4 text-balance">
+    {% asyncEach project in collections.projects %}
+      {% include "components/project-card.njk" %}
+    {% endeach %}
+  </div>
+</section>
