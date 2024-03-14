@@ -1,21 +1,11 @@
-<article class="project-card">
-  <div class="project-card__image-wrapper">
-    {% EleventyImage project.data.image, project.data.imageAlt, "(min-width: 30em) 50vw, 100vw" %}
-  </div>
-  <div class="project-card__body">
-    <div class="project-card__tags">
-      {% for tag in project.data.tech %}
-        <span class="project-card__tag">{{ tag }}</span>
-      {% endfor %}
+<div class="block rounded-lg overflow-hidden bg-slate-100 transition-transform duration-200 hover:scale-105">
+  <a href="{{ project.url }}">
+    <div class="w-full h-48 bg-cover bg-center"> 
+      {% EleventyImage project.data.image, project.data.imageAlt, "(min-width: 30em) 50vw, 100vw" %}
     </div>
-    <h3 class="project-card__title">
-      <a href="{{ project.url }}">{{ project.data.title }}</a>
-    </h3>
-    <p class="project-card__summary">{{ project.data.summary }}</p>
-    <a class="project-card__link" href="{{ project.url }}">Read project case study 
-      <svg xmlns="http://www.w3.org/2000/svg" class="project-card__link-icon" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-      </svg>
-    </a>
-  </div>
-</article>
+    <div class="p-6">
+      <h5 class="mb-2 text-xl font-medium leading-tight font-semibold">{{ project.data.headline }}</h5>
+      <p class="mb-4">{{ project.data.summary }}</p>
+    </div>
+  </a>
+</div>

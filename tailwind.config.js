@@ -2,8 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{html,njk,md}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        body: ['Poppins']
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 }
 
