@@ -2,12 +2,13 @@
 title: "Contact | Freelance Web Developer | Roman Waters"
 layout: "layouts/base.njk"
 ---
-  <div class="pt-12 pb-5">
+
+<div class="pt-12 pb-5 flex items-center justify-center flex-wrap">
+  <div class="max-w-md">
     <h2 class="text-3xl font-bold text-center mb-4">Want to get in touch?</h2>
-    <p class="text-center mb-4">I'm always open to new opportunities and projects. 
+    <p class="text-center mb-7">I'm always open to new opportunities and projects. 
       Text, call, email or use the contact form below to get started</p>
-    <br />
-    <p class="text-center">
+    <p class="text-center mb-4">
       <a class="block mb-4 font-bold text-gray-950 hover:underline" href="mailto:hello@romanwaters.com">
       hello@romanwaters.com
       </a>
@@ -17,22 +18,22 @@ layout: "layouts/base.njk"
         07723 459319
       </a>
     </p>
-    <form class="w-full max-w-lg mx-auto shadow-md rounded px-8 pt-6 pb-8" name="contact" action="/success" method="POST" data-netlify="true">
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="yourName">Name</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="name" type="text" id="yourName" required="true">
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="yourEmail">Email</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" type="email"  id="yourEmail" required="true">
-      </div>
-      <div class="mb-6">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
-        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="message" id="message" rows="4" required="true"></textarea>
-      </div>
-      <div class="flex items-center justify-between">
-        <button class="bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Let's talk</button>
-      </div>
-    </form>
   </div>
-  
+  <form class="w-full max-w-lg px-8 pt-6 pb-8" name="contact" action="/success" method="POST" data-netlify="true">
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="yourName">Name</label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="name" type="text" id="yourName" required="true">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="yourEmail">Email</label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" type="email"  id="yourEmail" required="true">
+    </div>
+    <div class="mb-6">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
+      <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="message" id="message" rows="4" required="true"></textarea>
+    </div>
+    <div class="flex items-center justify-center">
+      <button class="bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Let's talk</button>
+    </div>
+  </form>
+</div>
