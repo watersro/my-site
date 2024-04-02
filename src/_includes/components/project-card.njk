@@ -1,11 +1,31 @@
-<div class="block rounded-lg overflow-hidden bg-slate-100 transition-transform duration-200 hover:scale-105">
+{# <div class="block rounded-lg overflow-hidden bg-slate-100 transition-transform duration-200 hover:scale-105">
   <a href="{{ project.url }}">
-    <div class="w-full h-48 bg-cover bg-center"> 
+    <div class="w-full h-48 bg-cover bg-center">
       {% EleventyImage project.data.image, project.data.imageAlt, "(min-width: 30em) 50vw, 100vw" %}
     </div>
-    <div class="p-6">
-      <h5 class="mb-2 text-xl font-medium leading-tight font-semibold">{{ project.data.headline }}</h5>
+    <div class="p-6 md:-mt-20 lg:mt-10">
+      <h5 class="mb-2 xs:mt-1 md:mt-0 text-xl leading-tight font-semibold">{{ project.data.headline }}</h5>
       <p class="mb-4">{{ project.data.summary }}</p>
     </div>
   </a>
-</div>
+</div> #}
+<article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80">
+  <img src="{{ project.data.image }}" alt="project.data.imageAlt" class="absolute inset-0 -z-10 h-full w-full object-cover">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+  <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
+
+  <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
+    <div class="-ml-4 flex items-center gap-x-4">
+      <svg viewBox="0 0 2 2" class="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
+        <circle cx="1" cy="1" r="1"/>
+      </svg>
+
+    </div>
+  </div>
+  <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
+    <a href="{{ project.url }}">
+      <span class="absolute inset-0"></span>
+      {{ project.data.headline }}
+    </a>
+  </h3>
+</article>
