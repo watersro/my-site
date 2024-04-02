@@ -2,6 +2,7 @@
 
 const defaultTheme = require("tailwindcss/defaultTheme");
 
+
 module.exports = {
   content: ["./src/**/*.{html,njk,md}"],
   theme: {
@@ -17,3 +18,4 @@ module.exports = {
   },
   plugins: [require("@tailwindcss/typography")],
 };
+

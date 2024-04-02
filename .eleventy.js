@@ -24,8 +24,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/assets/css/");
   eleventyConfig.addPassthroughCopy("./src/assets/js");
   eleventyConfig.addPassthroughCopy("./src/assets/images/");
+
   eleventyConfig.addPassthroughCopy({ "./src/assets/favicons": "/" });
-  eleventyConfig.addPassthroughCopy({ "src/assets/pdfs": "assets/pdfs" });
+
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   eleventyConfig.addShortcode("pdfLink", function (path, text) {
