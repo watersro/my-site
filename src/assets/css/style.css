@@ -773,8 +773,17 @@ body .prose h6 {
     flex-direction: column;
     width: 100%;
     padding-top: 20px;
+    list-style-type: none; /* Ensures no bullets are used */
   }
 
+  .nav-menu li {
+    list-style-type: none; /* Ensures no bullets on li elements */
+  }
+
+  .nav-menu li::marker,
+  .nav-menu li::before {
+    content: none; /* Removes any pseudo-element content */
+  }
   .nav-menu.active {
     display: flex;
   }
