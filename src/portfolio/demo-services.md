@@ -33,7 +33,9 @@ Zay Accountants, a reputable firm in the accountancy sector, sought to enhance t
 - **Client Interview:** Engaged with Ivonne to understand Zay Accountants' brand values, target audience, and services.
 - **Competitive Analysis:** Reviewed Petal's landing page and other accountancy firm websites to identify best practices in design and user experience.
 - **Color Scheme Development:** Focused on creating a palette that uses red effectively, complementing it with neutral tones to ensure readability and professional appeal.
-- ### Design Phase
+
+### Design Phase
+
 - **Wireframing:** Developed initial layouts focusing on content hierarchy, ensuring services are prominently displayed.
 - **Mockups:** Created high-fidelity mockups, integrating red into the design as a primary accent color for calls to action, headlines, and key graphics.
 - **User Feedback:** Conducted a small focus group with stakeholders and potential clients to gather feedback on the design's appeal and usability.
