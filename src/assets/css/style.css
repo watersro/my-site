@@ -107,6 +107,15 @@ a {
 
 .panel {
 }
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -1; /* Ensures canvas is in the background */
+}
 .half-page {
   flex: 1 1 50%; /* Each section takes up half of the page */
   display: flex;
