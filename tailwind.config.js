@@ -7,13 +7,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        rubik: ["Rubik", "sans-serif"],
-        sans: ["Poppins", "sans-serif"],
+        mono: ["Azeret Mono", "monospace"],
       },
     },
     screens: {
       xs: "475px",
       ...defaultTheme.screens,
+    },
+    colors: {
+      "custom-slate": "#fff9dd",
     },
   },
   plugins: [require("@tailwindcss/typography")],
