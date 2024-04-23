@@ -4,14 +4,15 @@ window.addEventListener("load", function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  const header = document.querySelector("header"); // Ensure this selector targets your header
+  const header = document.querySelector("header"); // Selector for the header
+  const headerLinksDiv = document.querySelector(".header__links"); // Selector for the header links div
 
   const noise = new SimplexNoise();
   let time = 0;
 
   let baseColor = { r: 203, g: 235, b: 242 }; // Initial color: #CBEBF2
   let targetColor = { ...baseColor };
-  let lerpFactor = 0.045;
+  let lerpFactor = 0.02;
 
   function hexToRgb(hex) {
     let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -36,12 +37,12 @@ window.addEventListener("load", function () {
     time += 0.01;
     const imageData = ctx.createImageData(canvas.width, canvas.height);
     const data = imageData.data;
-    let frequency = 0.009; // The frequency of the noise
-    let amplitude = 20; // The amplitude of the noise
+    let frequency = 0.0099; // Noise frequency
+    let amplitude = 20; // Noise amplitude
 
     let avgR = 0,
       avgG = 0,
-      avgB = 0; // Variables to store average color values for the header
+      avgB = 0; // Average color values
     let count = 0;
 
     for (let x = 0; x < canvas.width; x++) {
@@ -51,12 +52,11 @@ window.addEventListener("load", function () {
           amplitude;
 
         let index = (x + y * canvas.width) * 4;
-        data[index] = Math.min(255, Math.max(0, baseColor.r + v)); // Red
-        data[index + 1] = Math.min(255, Math.max(0, baseColor.g + v)); // Green
-        data[index + 2] = Math.min(255, Math.max(0, baseColor.b + v)); // Blue
-        data[index + 3] = 255; // Alpha
+        data[index] = Math.min(255, Math.max(0, baseColor.r + v));
+        data[index + 1] = Math.min(255, Math.max(0, baseColor.g + v));
+        data[index + 2] = Math.min(255, Math.max(0, baseColor.b + v));
+        data[index + 3] = 255; // Alpha value
 
-        // Accumulate values to calculate average only over the entire canvas for smooth color transition
         avgR += data[index];
         avgG += data[index + 1];
         avgB += data[index + 2];
@@ -67,15 +67,14 @@ window.addEventListener("load", function () {
     ctx.putImageData(imageData, 0, 0);
     requestAnimationFrame(draw);
 
-    // Calculate average colors for the header
     avgR /= count;
     avgG /= count;
     avgB /= count;
 
-    // Apply the average noise color to the header's background
-    header.style.backgroundColor = rgbToCss(avgR, avgG, avgB);
+    const avgColorCss = rgbToCss(avgR, avgG, avgB);
+    header.style.backgroundColor = avgColorCss; // Apply to header background
+    headerLinksDiv.style.backgroundColor = avgColorCss; // Apply to header links div background
 
-    // Smoothly transition base color towards the target color
     baseColor.r = lerp(baseColor.r, targetColor.r, lerpFactor);
     baseColor.g = lerp(baseColor.g, targetColor.g, lerpFactor);
     baseColor.b = lerp(baseColor.b, targetColor.b, lerpFactor);
@@ -95,7 +94,7 @@ window.addEventListener("load", function () {
       .data("color");
 
     if (currentPanel) {
-      targetColor = hexToRgb(currentPanel); // Ensure this color value is in the proper format
+      targetColor = hexToRgb(currentPanel); // Update target color based on panel
     }
   });
 

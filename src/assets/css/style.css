@@ -118,24 +118,10 @@ a {
   display: block;
   z-index: -1; /* Ensures canvas is in the background */
 }
+
 .cursor {
-  pointer-events: none; /* Allows click events to pass through the cursor */
-  position: fixed; /* Keeps the cursor positioned relative to the viewport */
-  top: 0;
-  left: 0;
-  z-index: 10000; /* Ensures it is above all other content */
-  mix-blend-mode: difference; /* This will invert colors beneath the cursor */
+  display: none; /* Default state is hidden */
 }
-
-.cursor__ball {
-  position: absolute;
-}
-
-.cursor__ball--big circle {
-  fill: white; /* White color for high contrast in difference mode */
-  transition: transform 0.2s, opacity 0.2s;
-}
-
 .half-page {
   flex: 1 1 50%; /* Each section takes up half of the page */
   display: flex;
@@ -202,7 +188,6 @@ body .prose h6 {
   gap: 0.5rem;
   color: #000;
   opacity: 0.9;
-  transition: background-color 0.4s ease;
 }
 
 .header__link {
@@ -219,10 +204,6 @@ body .prose h6 {
   background-color: var(--black-soft);
   transform: scaleX(0);
   transition: transform 0.3s ease 0s;
-}
-
-.header__link:hover::after {
-  transform: scaleX(1);
 }
 
 .footer {
@@ -846,4 +827,25 @@ li {
 li::before {
   content: "• "; /* custom bullet */
   position: absolute;
+}
+
+@media (min-width: 1024px) {
+  .cursor {
+    display: block;
+    pointer-events: none; /* Allows click events to pass through the cursor */
+    position: fixed; /* Keeps the cursor positioned relative to the viewport */
+    top: 0;
+    left: 0;
+    z-index: 10000; /* Ensures it is above all other content */
+    mix-blend-mode: difference; /* This will invert colors beneath the cursor */
+  }
+
+  .cursor__ball {
+    position: absolute;
+  }
+
+  .cursor__ball--big circle {
+    fill: white; /* White color for high contrast in difference mode */
+    transition: transform 0.2s, opacity 0.2s;
+  }
 }

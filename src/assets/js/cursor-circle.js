@@ -1,23 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
   const cursorBigCircle = document.querySelector(".cursor__ball--big");
+  const cursorSmallCircle = document.querySelector(".cursor__ball--small");
 
-  // Move the cursor
-  document.addEventListener("mousemove", function (e) {
-    // Subtract half the width and height of the SVG to center it on the cursor
-    gsap.to(cursorBigCircle, 0.1, {
-      x: e.clientX - 15, // 15 is half the width of the SVG
-      y: e.clientY - 15, // 15 is half the height of the SVG
+  if (window.innerWidth >= 1024) {
+    // Only apply cursor effects if the screen is wide enough
+    document.addEventListener("mousemove", function (e) {
+      gsap.to(cursorBigCircle, {
+        duration: 0.1,
+        x: e.clientX - 15,
+        y: e.clientY - 15,
+      });
+      gsap.to(cursorSmallCircle, {
+        duration: 0.1,
+        x: e.clientX - 5,
+        y: e.clientY - 5,
+      });
     });
-  });
 
-  // Scaling effect for hoverables
-  const hoverables = document.querySelectorAll("a, .hoverable");
-  hoverables.forEach((item) => {
-    item.addEventListener("mouseenter", () => {
-      gsap.to(cursorBigCircle, 0.3, { scale: 4, opacity: 0.7 });
+    const hoverables = document.querySelectorAll("a, .hoverable");
+    hoverables.forEach((item) => {
+      item.addEventListener("mouseenter", () => {
+        gsap.to([cursorBigCircle, cursorSmallCircle], {
+          duration: 0.3,
+          scale: 4,
+          opacity: 0.7,
+        });
+      });
+      item.addEventListener("mouseleave", () => {
+        gsap.to([cursorBigCircle, cursorSmallCircle], {
+          duration: 0.3,
+          scale: 1,
+          opacity: 1,
+        });
+      });
     });
-    item.addEventListener("mouseleave", () => {
-      gsap.to(cursorBigCircle, 0.3, { scale: 1, opacity: 1 });
-    });
-  });
+  }
 });
