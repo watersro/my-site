@@ -2,13 +2,13 @@
 
 const defaultTheme = require("tailwindcss/defaultTheme");
 
-
 module.exports = {
   content: ["./src/**/*.{html,njk,md}"],
   theme: {
     extend: {
       fontFamily: {
-        body: ["Poppins"],
+        rubik: ["Rubik", "sans-serif"],
+        sans: ["Poppins", "sans-serif"],
       },
     },
     screens: {
@@ -18,4 +18,3 @@ module.exports = {
   },
   plugins: [require("@tailwindcss/typography")],
 };
-

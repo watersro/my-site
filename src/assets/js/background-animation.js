@@ -12,7 +12,7 @@ window.addEventListener("load", function () {
 
   let baseColor = { r: 203, g: 235, b: 242 }; // Initial color: #CBEBF2
   let targetColor = { ...baseColor };
-  let lerpFactor = 0.02;
+  let lerpFactor = 0.05;
 
   function hexToRgb(hex) {
     let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
