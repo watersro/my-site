@@ -47,7 +47,6 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: "Inter", sans-serif;
   cursor: none;
   display: flex;
   flex-direction: column;
