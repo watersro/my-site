@@ -39,10 +39,9 @@ window.addEventListener("load", function () {
     let frequency = 0.009; // The frequency of the noise
     let amplitude = 20; // The amplitude of the noise
 
-    // Variables to store average color values for the header
     let avgR = 0,
       avgG = 0,
-      avgB = 0;
+      avgB = 0; // Variables to store average color values for the header
     let count = 0;
 
     for (let x = 0; x < canvas.width; x++) {
@@ -54,17 +53,14 @@ window.addEventListener("load", function () {
         let index = (x + y * canvas.width) * 4;
         data[index] = Math.min(255, Math.max(0, baseColor.r + v)); // Red
         data[index + 1] = Math.min(255, Math.max(0, baseColor.g + v)); // Green
-        data[index + 2] = Math.min(255, Math.max(0, baseColor.b - v)); // Blue
+        data[index + 2] = Math.min(255, Math.max(0, baseColor.b + v)); // Blue
         data[index + 3] = 255; // Alpha
 
-        // Accumulate values to calculate average
-        if (x % 10 === 0 && y % 10 === 0) {
-          // Sample the colors sparsely
-          avgR += data[index];
-          avgG += data[index + 1];
-          avgB += data[index + 2];
-          count++;
-        }
+        // Accumulate values to calculate average only over the entire canvas for smooth color transition
+        avgR += data[index];
+        avgG += data[index + 1];
+        avgB += data[index + 2];
+        count++;
       }
     }
 
@@ -86,8 +82,8 @@ window.addEventListener("load", function () {
   }
 
   $(window).scroll(function () {
-    let scroll = $(window).scrollTop() + $(window).height() / 2,
-      $panel = $(".panel");
+    let scroll = $(window).scrollTop() + $(window).height() / 2;
+    let $panel = $(".panel");
 
     let currentPanel = $panel
       .filter(function () {
@@ -99,7 +95,7 @@ window.addEventListener("load", function () {
       .data("color");
 
     if (currentPanel) {
-      targetColor = hexToRgb(currentPanel);
+      targetColor = hexToRgb(currentPanel); // Ensure this color value is in the proper format
     }
   });
 
