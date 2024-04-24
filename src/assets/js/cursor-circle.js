@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const cursorBigCircle = document.querySelector(".cursor__ball--big");
-  const cursorSmallCircle = document.querySelector(".cursor__ball--small");
+  const cursorSmallCircle = document.querySelector(".cursor__ball");
 
   if (window.innerWidth >= 1024) {
     // Only apply cursor effects if the screen is wide enough

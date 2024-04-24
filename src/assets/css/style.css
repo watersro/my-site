@@ -829,7 +829,7 @@ li::before {
   position: absolute;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
   .cursor {
     display: block;
     pointer-events: none; /* Allows click events to pass through the cursor */
