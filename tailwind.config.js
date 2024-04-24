@@ -18,7 +18,7 @@ module.exports = {
       "custom-slate": "#fff9dd",
     },
     animation: {
-      "pulse-slow": "pulse 5s linear infinite",
+      "pulse-slow": "pulse 4s linear infinite",
     },
   },
   plugins: [require("@tailwindcss/typography")],
