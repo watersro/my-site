@@ -12,7 +12,7 @@ window.addEventListener("load", function () {
 
   let baseColor = { r: 12, g: 20, b: 27 }; // Initial color: #0C141B
   let targetColor = { ...baseColor };
-  let lerpFactor = 0.2; // Increased for quicker transitions
+  let lerpFactor = 0.5; // Increased for quicker transitions
 
   function hexToRgb(hex) {
     let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -37,8 +37,8 @@ window.addEventListener("load", function () {
     time += 0.01;
     const imageData = ctx.createImageData(canvas.width, canvas.height);
     const data = imageData.data;
-    let frequency = 0.0099; // Noise frequency
-    let amplitude = 20; // Noise amplitude
+    let frequency = 0.003; // Noise frequency
+    let amplitude = 25; // Noise amplitude
 
     let avgR = 0,
       avgG = 0,

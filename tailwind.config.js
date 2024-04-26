@@ -3,10 +3,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: [
-    "./src/**/*.{html,njk,md}",
-    ".src/_includes/components/project-card.njk",
-  ],
+  content: ["./src/**/*.{html,njk,md}"],
   theme: {
     extend: {
       fontFamily: {
@@ -23,6 +20,17 @@ module.exports = {
     animation: {
       "pulse-slow": "pulse 4s linear infinite",
       pulse: "pulse 3s linear infinite",
+      glow: "glow 2s ease-in-out infinite",
+    },
+    keyframes: {
+      glow: {
+        "0%, 100%": {
+          textShadow: "0 0 5px #F3F5CC",
+        },
+        "50%": {
+          textShadow: "0 0 2px #F3F5CC",
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
