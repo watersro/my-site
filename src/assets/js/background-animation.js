@@ -10,9 +10,9 @@ window.addEventListener("load", function () {
   const noise = new SimplexNoise();
   let time = 0;
 
-  let baseColor = { r: 203, g: 235, b: 242 }; // Initial color: #CBEBF2
+  let baseColor = { r: 12, g: 20, b: 27 }; // Initial color: #0C141B
   let targetColor = { ...baseColor };
-  let lerpFactor = 0.05;
+  let lerpFactor = 0.5; // Increased for quicker transitions
 
   function hexToRgb(hex) {
     let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -37,8 +37,8 @@ window.addEventListener("load", function () {
     time += 0.01;
     const imageData = ctx.createImageData(canvas.width, canvas.height);
     const data = imageData.data;
-    let frequency = 0.0099; // Noise frequency
-    let amplitude = 20; // Noise amplitude
+    let frequency = 0.003; // Noise frequency
+    let amplitude = 25; // Noise amplitude
 
     let avgR = 0,
       avgG = 0,
