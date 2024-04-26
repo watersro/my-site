@@ -3,9 +3,10 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  mode: "jit",
-
-  content: ["./src/**/*.{html,njk,md,js}", "./*.{html,njk,md,js}"],
+  content: [
+    "./src/**/*.{html,njk,md}",
+    ".src/_includes/components/project-card.njk",
+  ],
   theme: {
     extend: {
       fontFamily: {
