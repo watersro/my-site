@@ -870,4 +870,9 @@ li::before {
     fill: white; /* White color for high contrast in difference mode */
     transition: transform 0.2s, opacity 0.2s;
   }
+  a,
+  .hoverable,
+  button {
+    cursor: none; /* Ensure the default cursor is not shown */
+  }
 }
