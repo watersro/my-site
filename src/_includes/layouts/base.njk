@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="I'm a Frontend software developer who builds sites and apps that help people reach their personal and professional goals."/>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="{{'/assets/css/style.css' | url | safe}}">
-  <title>{{ title }}</title>
-</head>
-<body class="font-body">
-    <div class="">
-      {% include "components/header.njk" %}
-    
-      {{ content | safe }}
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I'm a developer who builds sites and apps that help people reach their personal and professional goals."/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{'/assets/css/style.css' | url | safe}}">
+    <title>{{ title }}</title>
+  </head>
+  <body class="font-body relative">
+
+    <div class="cursor">
+      <div class="cursor__ball cursor__ball--big">
+        <svg height="30" width="30">
+          <circle cx="15" cy="15" r="12"></circle>
+        </svg>
+      </div>
     </div>
-    </main>
-  {% include "components/footer.njk" %}
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="/assets/js/background.js"></script>
-  <script src="/assets/js/main.js"></script>
-</body>
+
+    <canvas id="canvas" class="fixed top-0 left-0 w-full h-full -z-20"></canvas>
+
+    <div class="relative z-10 min-h-screen flex flex-col">
+      {% include "components/header.njk" %}
+      <main class="flex-grow overflow-hidden">
+        {{ content | safe }}
+      </main>
+      {% include "components/footer.njk" %}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/simplex-noise/simplex-noise.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/assets/js/background-animation.js"></script>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/cursor-circle.js"></script>
+  </body>
 </html>
