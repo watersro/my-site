@@ -25,5 +25,5 @@ module.exports = {
       pulse: "pulse 3s linear infinite",
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };
