@@ -18,6 +18,7 @@
   --amber-800: #92400e;
   --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05),
     0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --default-text: #fff9dd;
 }
 
 /* CSS Normalization */
@@ -161,16 +162,25 @@ a {
   background-color: rgb(2 6 23 / 0.5);
 }
 .prose p {
-  color: #000;
+  color: var(--default-text);
 }
 body .prose h1,
 body .prose h2,
 body .prose h3,
 body .prose h4,
 body .prose h5,
-body .prose h6 {
-  color: #111827;
+body .prose h6,
+body .prose strong {
+  color: var(--default-text);
   font-weight: 700;
+}
+body .prose a {
+  color: var(--default-text);
+  animation: glow 2s ease-in-out infinite;
+  text-decoration: none;
+}
+body .prose a:hover {
+  text-decoration: underline;
 }
 /* Header Styles */
 
@@ -213,7 +223,7 @@ body .prose h6 {
   height: 2px;
   width: 100%;
   position: absolute;
-  background-color: var(--black-soft);
+  background-color: var(--default-text);
   transform: scaleX(0);
   transition: transform 0.3s ease 0s;
 }
@@ -611,13 +621,13 @@ body .prose h6 {
 
 .prose {
   font-size: 1.125rem;
-  color: var(--black-soft);
+  color: var(--default-text);
 }
 
 .prose h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  color: var(--black-soft);
+  color: var(--default-text);
 }
 
 .prose ul {
@@ -637,7 +647,7 @@ body .prose h6 {
   top: 0.6875em;
   left: 0.25em;
   border-radius: 50%;
-  background-color: var(--black-soft);
+  background-color: var(--default-text);
 }
 
 .prose p {
@@ -655,7 +665,7 @@ body .prose h6 {
 
 .contact__sub-heading {
   padding: 0 1rem;
-  color: var(--black-soft);
+  color: var(--default-text);
 }
 
 .form {
@@ -681,7 +691,7 @@ body .prose h6 {
   border: 1px solid var(--neutral-slate);
   border-radius: 0.25rem;
   padding: 0.5rem;
-  color: var(--black-soft);
+  color: var(--default-text);
 }
 
 .form__button {
@@ -692,7 +702,7 @@ body .prose h6 {
   border-radius: 0.25rem;
   cursor: pointer;
   color: #fff;
-  background-color: var(--black-soft);
+  background-color: var(--default-text);
   transition: background-color 0.3s ease;
 }
 
@@ -756,7 +766,7 @@ body .prose h6 {
   .hero__text--lead {
     font-weight: 750;
     font-size: 2rem;
-    color: var(--black-soft);
+    color: var(--default-text);
   }
 
   .services {
