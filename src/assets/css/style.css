@@ -252,7 +252,7 @@ body .prose a:hover {
   display: block;
   width: 25px;
   height: 3px;
-  background-color: var(--black-soft);
+  background-color: var(--default-text);
   transition: 0.4s;
 }
 
