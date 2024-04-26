@@ -148,7 +148,9 @@ a {
 .color-mauve {
   background-color: #f3c7ff;
 }
-
+.bg-slate-950-50-opacity {
+  background-color: rgb(2 6 23 / 0.5);
+}
 .prose p {
   color: #000;
 }
