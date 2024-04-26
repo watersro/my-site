@@ -23,6 +23,10 @@ module.exports = {
       glow: "glow 2s ease-in-out infinite",
     },
     keyframes: {
+      pulse: {
+        "0%, 100%": { opacity: 1 },
+        "50%": { opacity: 0.5 },
+      },
       glow: {
         "0%, 100%": {
           textShadow: "0 0 5px #F3F5CC",
