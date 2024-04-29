@@ -4,9 +4,13 @@ layout: "layouts/base.njk"
 permalink: 404.html
 ---
 
-<section class="max-w-none md:max-w-3xl mx-auto p-5 ">
-  <h2 class="text-3xl text-gray-900 md:text-4xl font-bold text-center mb-6">Hmm... that page doesn't seem to exist</h2>
-  <div class="flex justify-center">
-    <button href="/" class="bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Back to home</button>
+<main class="grid min-h-full place-items-center px-6 py-24 sm:py-32 lg:px-8">
+  <div class="text-center">
+    <p class="text-base font-semibold">404</p>
+    <h1 class="mt-4 text-3xl font-bold tracking-tight sm:text-5xl">Page not found</h1>
+    <p class="mt-6 text-base leading-7">Hmm... that page doesn't seem to exist</p>
+    <div class="mt-10 flex items-center justify-center gap-x-6">
+      <a href="/" class="rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 animate-glow hover:underline focus-visible:outline-indigo-600">Back to home</a>
+    </div>
   </div>
-</section>
+</main>
