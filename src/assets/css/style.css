@@ -887,3 +887,15 @@ li::before {
     cursor: none; /* Ensure the default cursor is not shown */
   }
 }
+
+@media (pointer: none) {
+  .cursor {
+    display: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
+}
