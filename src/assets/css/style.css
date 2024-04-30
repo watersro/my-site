@@ -179,6 +179,10 @@ body .prose a {
 body .prose a:hover {
   text-decoration: underline;
 }
+body input,
+textarea {
+  color: var(--background-col);
+}
 /* Header Styles */
 
 .header {
