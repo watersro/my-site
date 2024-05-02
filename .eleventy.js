@@ -19,7 +19,7 @@ async function imageShortcode(src, alt, sizes) {
 }
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("_redirects");
+  eleventyConfig.addPassthroughCopy("./src/_redirects");
 
   eleventyConfig.addWatchTarget("style.out.css");
   eleventyConfig.addWatchTarget("./src/");
