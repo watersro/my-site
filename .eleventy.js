@@ -19,6 +19,8 @@ async function imageShortcode(src, alt, sizes) {
 }
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("./src/_redirects");
+
   eleventyConfig.addWatchTarget("style.out.css");
   eleventyConfig.addWatchTarget("./src/");
   eleventyConfig.addWatchTarget("./src/assets/css/");
@@ -26,7 +28,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/assets/images/");
 
   eleventyConfig.addPassthroughCopy({ "./src/assets/favicons": "/" });
-
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   eleventyConfig.addShortcode("pdfLink", function (path, text) {
