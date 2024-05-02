@@ -100,19 +100,21 @@ window.addEventListener("load", function () {
     }
   }
 
-  const $panels = $(".panel");
-
-  $(window).scroll(
+  document.addEventListener(
+    "scroll",
     debounce(function () {
-      let scroll = $(window).scrollTop() + $(window).height() / 2;
-      let currentPanel = $panels
-        .filter(function () {
-          return (
-            $(this).position().top <= scroll &&
-            $(this).position().top + $(this).outerHeight() > scroll
-          );
-        })
-        .data("color");
+      let scroll = window.scrollY + window.innerHeight / 2;
+      let panels = document.querySelectorAll(".panel");
+      let currentPanel;
+
+      for (let panel of panels) {
+        let panelTop = panel.offsetTop;
+        let panelHeight = panel.offsetHeight;
+        if (panelTop <= scroll && panelTop + panelHeight > scroll) {
+          currentPanel = panel.getAttribute("data-color");
+          break;
+        }
+      }
 
       if (
         currentPanel &&
