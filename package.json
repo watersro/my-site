@@ -7,7 +7,7 @@
     "start": "npm-run-all --parallel serve watch:css",
     "serve": "eleventy --serve",
     "watch:css": "postcss ./src/assets/css/style.css -o ./public/assets/css/style.css --watch",
-    "build": "NODE_ENV=production eleventy && NODE_ENV=production postcss ./src/assets/css/style.css -o ./public/assets/css/style.css"
+    "build": "eleventy &&  postcss ./src/assets/css/style.css -o ./public/assets/css/style.css"
   },
   "keywords": [],
   "author": "",
