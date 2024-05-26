@@ -21,6 +21,10 @@ async function imageShortcode(src, alt, sizes) {
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/_redirects");
 
+  eleventyConfig.addCollection("blog", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("blog/*.md").reverse();
+  });
+
   eleventyConfig.addWatchTarget("style.out.css");
   eleventyConfig.addWatchTarget("./src/");
   eleventyConfig.addWatchTarget("./src/assets/css/");

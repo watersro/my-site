@@ -1,0 +1,74 @@
+---
+title: "Blog | Freelance Web Developer | Roman Waters"
+layout: "layouts/base.njk"
+pagination:
+  data: collections.blog
+  size: 10
+  alias: posts
+permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+---
+<div class="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40 overflow-hidden">
+  <div class="mx-auto max-w-2xl lg:max-w-none">
+    <h1>
+      <span class="block font-display text-base font-semibold">My Blog</span>
+      <span class="mt-6 block max-w-5xl font-display text-5xl font-medium tracking-tight [text-wrap:balance] sm:text-6xl">Read the latest</span>
+    </h1>
+    <div class="mt-6 max-w-3xl text-xl">
+      <p>I write more than code. Here you'll find news, advice, and more all about websites, digital happenings, and the wonders of work with young people.</p>
+    </div>
+  </div>
+  <div class="flex flex-col lg:flex-row lg:space-x-16 mt-4 space-y-20 lg:mt-8 lg:space-y-0">
+    <!-- Main content -->
+    <div class="w-full lg:w-8/12">
+      <div class="mx-auto max-w-2xl lg:max-w-none">
+        <div class="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
+
+          <!-- More posts... -->
+
+          {% for post in posts %}
+            <article class="mb-6">
+              {% include "components/blog-card.njk" %}
+            </article>
+            {% if loop.index < loop.length %}
+              <div class="mt-6 flex border-t border-gray-900/5 pt-6"></div>
+            {% endif %}
+          {% endfor %}
+
+          <div class="pagination">
+            {% if pagination.href.previous %}
+              <a href="{{ pagination.href.previous }}" class="mr-4">Previous</a>
+            {% endif %}
+            {% if pagination.href.next %}
+              <a href="{{ pagination.href.next }}">Next</a>
+            {% endif %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Right side section -->
+    <div class="w-full lg:w-4/12 bg-slate-950-50-opacity rounded-xl">
+      <div class="lg:mt-20">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl p-8">Featured Posts</h2>
+        <div class="relative p-8 mb-8 bg-primary">
+          <div class="pb-6 border-b border-white/30">
+            <h3>
+              <a href="javascript:void(0)" class="inline-block mb-3 text-xl font-semibold text-white hover:text-white/80">
+                Design is a Plan or The Construction of an Object.
+              </a>
+            </h3>
+            <time datetime="2020-03-16" class="text-gray-500">Mar 16, 2020</time>
+          </div>
+          <div class="pb-6 border-b border-white/30">
+            <h3 class="pt-6">
+              <a href="javascript:void(0)" class="inline-block mb-3 text-xl font-semibold text-white hover:text-white/80">
+                Design is a Plan or The Construction of an Object.
+              </a>
+            </h3>
+            <time datetime="2020-03-16" class="text-gray-500">Mar 16, 2020</time>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
