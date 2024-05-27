@@ -52,7 +52,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("pdfLink", function (path, text) {
     return `<a href="${path}" target="_blank" rel="noopener noreferrer">${text}</a>`;
   });
+  eleventyConfig.addShortcode("blogLink", function (path, text) {
+    return `<a href="${path}">${text}</a>`;
+  });
   eleventyConfig.addNunjucksAsyncShortcode("EleventyImage", imageShortcode);
+  eleventyConfig.addShortcode("blogImage", function (image, imageAlt) {
+    return `<img class="w-full h-auto rounded-md shadow-lg" src="${image}" alt="${imageAlt}">`;
+  });
 
   // Directory settings
   return {
