@@ -19,31 +19,48 @@ async function imageShortcode(src, alt, sizes) {
 }
 
 module.exports = function (eleventyConfig) {
+  // Passthrough copy for specific files and directories
   eleventyConfig.addPassthroughCopy("./src/_redirects");
-
-  eleventyConfig.addWatchTarget("style.out.css");
-  eleventyConfig.addWatchTarget("./src/");
-  eleventyConfig.addWatchTarget("./src/assets/css/");
   eleventyConfig.addPassthroughCopy("./src/assets/js");
   eleventyConfig.addPassthroughCopy("./src/assets/images/");
-
   eleventyConfig.addPassthroughCopy({ "./src/assets/favicons": "/" });
-
-  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
-  eleventyConfig.addShortcode("pdfLink", function (path, text) {
-    return `<a href="${path}" target="_blank" rel="noopener noreferrer">${text}</a>`;
-  });
-
-  eleventyConfig.addNunjucksAsyncShortcode("EleventyImage", imageShortcode);
   eleventyConfig.addPassthroughCopy({
     "style.out.css": "/assets/css/style.css",
   });
 
+  // Collection for blog posts
+  eleventyConfig.addCollection("blog", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/blog/*.md").reverse();
+  });
+
+  eleventyConfig.addCollection("featuredPosts", function (collection) {
+    return collection
+      .getAllSorted()
+      .filter(function (item) {
+        return item.data.tags && item.data.tags.includes("Featured");
+      })
+      .slice(0, 3);
+  });
+
+  // Watch targets for development
+  eleventyConfig.addWatchTarget("style.out.css");
+  eleventyConfig.addWatchTarget("./src/");
+  eleventyConfig.addWatchTarget("./src/assets/css/");
+
+  // Shortcodes
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+  eleventyConfig.addShortcode("pdfLink", function (path, text) {
+    return `<a href="${path}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+  });
+  eleventyConfig.addNunjucksAsyncShortcode("EleventyImage", imageShortcode);
+
+  // Directory settings
   return {
     dir: {
       input: "src",
       output: "public",
       includes: "_includes",
+      data: "_data",
     },
   };
 };
