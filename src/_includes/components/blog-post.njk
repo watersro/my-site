@@ -1,0 +1,13 @@
+---
+layout: "layouts/base.njk"
+---
+
+<div class="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+  <h2 class="text-3xl md:text-4xl font-bold mb-4">{{ headline }}</h2>
+  <div class="my-6">
+    <img class="w-full h-auto rounded-md shadow-lg" src="{{ image }}" alt="{{ imageAlt }}">
+  </div>
+  <div class="prose md:prose-lg max-w-none">
+    {{ content | safe }}
+  </div>
+</div>

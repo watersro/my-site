@@ -159,6 +159,16 @@ a {
 .bg-red-600-50-opacity {
   background-color: rgb(27 12 20 / 0.5);
 }
+.blog-button {
+  background-color: var(--default-text);
+  color: var(--background-col);
+  text-align: center;
+}
+.blog-button-inactive {
+  background-color: #1b0c14;
+  color: #8e8975;
+  text-align: center;
+}
 .prose p {
   color: var(--default-text);
 }
