@@ -2,22 +2,19 @@
 title: "Portfolio | Freelance Web Developer | Roman Waters"
 layout: "layouts/base.njk"
 ---
-<section class="">
-  <div class="bg-white py-24 sm:py-32">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl lg:mx-0">
-        <p class="text-base font-semibold leading-7">See my past work</p>
-        <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Portfolio</h2>
-        <p class="mt-6 text-lg leading-8 text-gray-600">Take a look at my portfolio to see examples of my work, and where I've delivered straightforward and effective web solutions for everyday challenges.</p>
-      </div>
-    </div>
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-        {% asyncEach project in collections.portfolio %}
-        {% include "components/project-card.njk" %}
-        {% endeach %}
-      </div>
+<section>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40 overflow-hidden">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <p class="text-base font-semibold leading-7">See my past work</p>
+      <h2 class="mt-6 block max-w-5xl font-display text-5xl font-medium tracking-tight [text-wrap:balance] sm:text-6xl">Portfolio</h2>
+      <p class="mt-6 text-lg leading-8 text-gray-600">Take a look at my portfolio to see examples of my work, and where I've delivered straightforward and effective web solutions for everyday challenges.</p>
     </div>
   </div>
-
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      {% asyncEach project in collections.portfolio %}
+      {% include "components/project-card.njk" %}
+      {% endeach %}
+    </div>
+  </div>
 </section>

@@ -1,0 +1,75 @@
+---
+title: "Blog | Freelance Web Developer | Roman Waters"
+layout: "layouts/base.njk"
+pagination:
+  data: collections.blog
+  size: 5
+  alias: posts
+permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}/"
+---
+<div class="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40 overflow-hidden">
+  <div class="mx-auto max-w-2xl lg:max-w-none">
+    <h1>
+      <span class="block font-display text-base font-semibold">My Blog</span>
+      <span class="mt-6 block max-w-5xl font-display text-5xl font-medium tracking-tight [text-wrap:balance] sm:text-6xl">Read the latest</span>
+    </h1>
+    <div class="mt-6 max-w-3xl text-xl">
+      <p>I write more than code. Here you'll find news, advice, and more all about websites, digital happenings, and the wonders of work with young people.</p>
+    </div>
+  </div>
+  <div class="flex flex-col lg:flex-row lg:space-x-16 mt-4 space-y-20 lg:mt-8 lg:space-y-0">
+    <!-- Main content -->
+    <div class="w-full lg:w-8/12">
+      <div class="mx-auto max-w-2xl lg:max-w-none">
+        <div class="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
+
+          {% for blog in posts %}
+            {% include "components/blog-card.njk" %}
+            {% if loop.index < loop.length %}
+              <div class="mt-6 flex border-t border-gray-900/5 pt-6"></div>
+            {% endif %}
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+    <!-- Right side section -->
+    <div class="w-full lg:w-4/12">
+      <div class="lg:mt-20 bg-slate-950-50-opacity rounded-xl">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl p-8">Featured Posts</h2>
+        <div class="relative p-8 mb-8 bg-primary">
+          {% set featuredPosts = collections.featuredPosts %}
+
+          {% set featuredPosts = collections.featuredPosts %}
+
+          {% for blog in featuredPosts %}
+            <div class="pb-6 {% if not loop.last %}border-b border-white/30{% endif %}">
+              <h3 class="pt-6">
+                <a href="{{ blog.url }}" class="inline-block mb-3 text-xl font-semibold">
+                  {{ blog.data.headline }}
+                </a>
+              </h3>
+              <time datetime="{{ blog.data.date }}" class="text-gray-500">{{ blog.data.prettyDate }}</time>
+            </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pagination-container flex justify-center mt-8">
+  <div class="pagination flex space-x-4">
+    {% if pagination.href.previous %}
+      <a href="{{ pagination.href.previous }}" class="mr-4 w-32 lg:w-48 blog-button rounded-xl">Previous</a>
+    {% else %}
+      <p class="mr-4 blog-button-inactive w-32 lg:w-48 px-2 rounded-xl">Previous</p>
+    {% endif %}
+    {% if pagination.href.next %}
+      <a href="{{ pagination.href.next }}" class="ml-4 px-2 w-32 lg:w-48 blog-button rounded-xl">Next</a>
+    {% else %}
+      <p class="ml-4 blog-button-inactive w-32 lg:w-48 px-2 rounded-xl">Next</p>
+    {% endif %}
+  </div>
+</div>
