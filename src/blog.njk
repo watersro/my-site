@@ -40,8 +40,6 @@ permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber
         <div class="relative p-8 mb-8 bg-primary">
           {% set featuredPosts = collections.featuredPosts %}
 
-          {% set featuredPosts = collections.featuredPosts %}
-
           {% for blog in featuredPosts %}
             <div class="pb-6 {% if not loop.last %}border-b border-white/30{% endif %}">
               <h3 class="pt-6">
