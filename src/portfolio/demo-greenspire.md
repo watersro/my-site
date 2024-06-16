@@ -15,6 +15,8 @@ tech:
 siteUrl: "#"
 
 repoUrl: "#"
+
+date: "2024-05-28"
 ---
 
 To demonstrate the potential uplift to your business, I've prepared a collection of demo designs to give you a clear idea of the possibilities. Here's a sample landing page design, crafted for the fictional landscaping company Greenspire.

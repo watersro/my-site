@@ -8,6 +8,8 @@ summary: "A demo services page, showcasing how my web design could benefit your 
 image: /assets/images/demo-services.svg
 
 imageAlt: "Screenshots of Services Page"
+
+date: "2024-05-27"
 ---
 
 To showcase how I could enhance your business, I've made a series of demo pieces to outline what to expect. This is a demo services page design, made for the fictional accountants firm Zay.
