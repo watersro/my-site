@@ -58,5 +58,5 @@ date: "2024-09-04"
 
 ## Outcome
 
-The <a href="https://edenperfumes.co.uk" target="_blank" rel="noopener noreferrer">Eden Perfumes Ltd website</a>
+The <a style="text-decoration:underline" href="https://edenperfumes.co.uk" target="_blank" rel="noopener noreferrer">Eden Perfumes Ltd website</a>
 successfully reflects the brand's commitment to ethical practices and high-quality fragrances. The minimalist yet captivating design provides a seamless user experience, highlighting the unique qualities of each perfume and enhancing the overall appeal of the brand.
