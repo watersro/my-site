@@ -49,7 +49,7 @@ This is a project very close to my heart, my website! I believe web development 
 {% blogImage image2, imageAlt2 %}
 
 - **Concept Design:** Combining the fasciniating contours of topographic maps, with the undulating patterns found in a lava lamp, or a marble worktop.
-- **Wireframing:** Created wireframes to visualy the hierarchy of my content.
+- **Wireframing:** Created wireframes to visualise the hierarchy of my content.
 - **Colour Theory:** Incorporated colour theory into my design, to invoke a calm and fresh feel.
 
 ### Development Phase
