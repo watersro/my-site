@@ -29,10 +29,10 @@ module.exports = {
       },
       glow: {
         "0%, 100%": {
-          textShadow: "0 0 5px #F3F5CC",
+          textShadow: "0 0 3px #F3F5CC",
         },
         "50%": {
-          textShadow: "0 0 2px #F3F5CC",
+          textShadow: "0 0 1px #F3F5CC",
         },
       },
     },

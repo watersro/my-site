@@ -57,7 +57,7 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addNunjucksAsyncShortcode("EleventyImage", imageShortcode);
   eleventyConfig.addShortcode("blogImage", function (image, imageAlt) {
-    return `<img class="w-full h-auto rounded-md shadow-lg" src="${image}" alt="${imageAlt}">`;
+    return `<img class="w-full h-auto rounded-md shadow-lg fix-filter" src="${image}" alt="${imageAlt}">`;
   });
 
   // Directory settings

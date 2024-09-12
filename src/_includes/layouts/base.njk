@@ -33,13 +33,32 @@
 
     <canvas id="canvas" class="fixed top-0 left-0 w-full h-full -z-20"></canvas>
 
-    <div class="relative z-10 min-h-screen flex flex-col">
+    <div id="page" class="relative z-10 min-h-screen flex flex-col">
       {% include "components/header.njk" %}
       <main class="flex-grow overflow-hidden">
         {{ content | safe }}
       </main>
       {% include "components/footer.njk" %}
     </div>
+    <button id="toggle-invert" class="fixed bottom-4 right-4 p-2 rounded-full shadow-lg z-10 bg-gray-800 text-white hover:bg-gray-700 transition" alt="Dark and light mode toggle">
+      <svg id="dark-icon" class="h-6 w-6 icon-color hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 118.646 3.646 9.003 9.003 0 0020.354 15.354z"></path>
+      </svg>
+      <svg id="light-icon" class="h-6 w-6 hidden icon-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"></circle>
+        <g stroke="currentColor" stroke-width="2">
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </g>
+      </svg>
+
+    </button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/simplex-noise/simplex-noise.min.js"></script>
@@ -47,5 +66,6 @@
 
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/cursor-circle.js"></script>
+    <script src="/assets/js/invert.js"></script>
   </body>
 </html>
