@@ -922,3 +922,21 @@ li::before {
     display: none;
   }
 }
+
+.inverted {
+  filter: invert(1);
+}
+.icon-light {
+  stroke: #fff9dd; /* Light mode color (Yellow for sun) */
+}
+.icon-dark {
+  stroke: #000621; /* Dark mode color (White for moon) */
+}
+.inverted img {
+  filter: invert(1); /* Invert all images */
+}
+
+/* Apply extra filters to non-markdown images */
+.inverted img.fix-filter {
+  filter: invert(1) grayscale(1); /* Apply both invert and grayscale */
+}
