@@ -5,11 +5,11 @@ title: "My Site Case Study | Freelance Web Developer | Roman Waters"
 
 summary: "The case study for this very site!"
 
-image: /assets/images/my-site.png
+image: /assets/images/my-site.webp
 
 imageAlt: "Screenshot of My Site's Landing Page"
 
-image2: /assets/images/topo-lava.png
+image2: /assets/images/topo-lava.webp
 
 imageAlt2: "Topography and LavaLamp marble swirl"
 

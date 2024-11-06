@@ -26,7 +26,7 @@ To showcase how I could enhance your business, I've made a series of demo pieces
 
 Zay Accountants, a reputable firm in the accountancy sector, sought to enhance their online presence through a redesigned website. The firm aimed to offer a clear, accessible overview of their services, emphasizing user engagement and conversion. The challenge was to create a design that balances professional appeal with the innovative edge seen in Petal's landing page, while also integrating Zay Accountants' brand color, red, into the design effectively.
 
-![Services page image 1](/assets/images/demo-services-1.png)
+![Services page image 1](/assets/images/demo-services-1.webp)
 
 ## Approach
 
@@ -42,20 +42,20 @@ Zay Accountants, a reputable firm in the accountancy sector, sought to enhance t
 - **Mockups:** Created high-fidelity mockups, integrating red into the design as a primary accent color for calls to action, headlines, and key graphics.
 - **User Feedback:** Conducted a small focus group with stakeholders and potential clients to gather feedback on the design's appeal and usability.
 
-![Services page image 2](/assets/images/demo-services-2.png)
+![Services page image 2](/assets/images/demo-services-2.webp)
 
 ### Implementation Guidance
 
 - **Responsive Design:** Ensured the services page is fully responsive, offering a seamless experience on both desktop and mobile devices.
 - **SEO Best Practices:** Integrated SEO-friendly content strategies to improve visibility and attract potential clients through organic search.
 
-![Services page image 3](/assets/images/demo-services-3.png)
+![Services page image 3](/assets/images/demo-services-3.webp)
 
 ## Outcome
 
 The redesigned services page for Zay Accountants successfully merges the firm's traditional professionalism with a modern, engaging interface. The strategic use of red throughout the design enhances brand recognition, while the layout inspired by Petal's landing page ensures a user-friendly experience. Early analytics indicate increased visitor engagement and a higher conversion rate from the services page.
 
-![Services page image 3](/assets/images/demo-services-4.png)
+![Services page image 3](/assets/images/demo-services-4.webp)
 
 ## Reflection
 

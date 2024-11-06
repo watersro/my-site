@@ -5,13 +5,9 @@ title: "Brighton Taxi Tours | Freelance Web Developer | Roman Waters"
 
 summary: "Designing and developing a website for tours around Brighton"
 
-image: /assets/images/btt.png
+image: /assets/images/btt.webp
 
 imageAlt: "Screenshot of Brighton Taxi Tours Landing Page"
-
-image2: /assets/images/eden2.png
-
-imageAlt2: "Screenshot of developing a responsive product page"
 
 tech:
   - "Figma"
