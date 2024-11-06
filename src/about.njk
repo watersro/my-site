@@ -7,9 +7,22 @@ layout: "layouts/base.njk"
   <div class="mx-auto max-w-2xl lg:max-w-5xl">
     <div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
       <div class="lg:pl-20 pt-6">
-        <div class="max-w-xs px-2.5 lg:max-w-none transistion duration-500 hover:scale-105">
-          <img alt="" loading="lazy" width="800" height="800" decoding="async" data-nimg="1" class="aspect-square rotate-3 rounded-2xl object-cover fix-filter" sizes="(min-width: 1024px) 32rem, 20rem" src="/assets/images/profile.jpg" style="color: transparent;"></div>
+        <div class="max-w-xs px-2.5 lg:max-w-none transition duration-500 hover:scale-105">
+          <picture>
+            <source srcset="/assets/images/profile_small.webp 640w, /assets/images/profile_medium.webp 1024w, /assets/images/profile_large.webp 1600w" type="image/webp" sizes="(min-width: 1024px) 32rem, 20rem">
+            <img 
+              src="/assets/images/profile_large.webp" 
+              alt="Profile image of Roman Waters"
+              loading="lazy" 
+              width="800" 
+              height="800" 
+              decoding="async" 
+              class="aspect-square rotate-3 rounded-2xl object-cover fix-filter" 
+              style="color: transparent;">
+          </picture>
+        </div>
       </div>
+      
       <div class="lg:order-first lg:row-span-2">
         <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">I'm Roman Waters, a web designer &amp; developer. I live in Brighton, UK</h1>
         <div class="mt-6 space-y-7 text-base">
@@ -25,6 +38,7 @@ layout: "layouts/base.njk"
              combined with natural analytical and asset based approach.</p>
         </div>
       </div>
+      
       <div class="lg:pl-20">
         <div role="list">
           <div class="mt-4 flex">
