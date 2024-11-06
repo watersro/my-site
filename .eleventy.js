@@ -57,7 +57,32 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addNunjucksAsyncShortcode("EleventyImage", imageShortcode);
   eleventyConfig.addShortcode("blogImage", function (image, imageAlt) {
-    return `<img class="w-full h-auto rounded-md shadow-lg fix-filter" src="${image}" alt="${imageAlt}">`;
+    const extension = image.split(".").pop().toLowerCase();
+    const responsiveFormats = ["jpg", "jpeg", "png", "webp", "avif"];
+    const isResponsive = responsiveFormats.includes(extension);
+
+    // Generate the HTML for the <img> tag with proper indentation
+    return `
+      <img 
+        class="w-full h-auto rounded-md shadow-lg fix-filter" 
+        src="${image}" 
+        ${
+          isResponsive
+            ? `srcset="${image.replace(/\.[^.]+$/, "_small.$&")} 640w, 
+                                 ${image.replace(
+                                   /\.[^.]+$/,
+                                   "_medium.$&"
+                                 )} 1024w, 
+                                 ${image.replace(
+                                   /\.[^.]+$/,
+                                   "_large.$&"
+                                 )} 1600w"
+                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"`
+            : ""
+        }
+        alt="${imageAlt}" 
+        loading="lazy">
+    `.trim();
   });
 
   // Directory settings
