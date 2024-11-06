@@ -1,6 +1,14 @@
 <article class="relative isolate flex flex-col gap-8 lg:flex-row">
   <div class="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0">
-    <img src="{{ blog.data.image }}" alt="{{ blog.data.imageAlt }}" class="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover fix-filter">
+    <img 
+      src="{{ blog.data.image }}" 
+      {% if not blog.data.image.endsWith('.svg') %}
+      srcset="{{ blog.data.image_small }} 640w, {{ blog.data.image_medium }} 1024w, {{ blog.data.image_large }} 1600w" 
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+      {% endif %}
+      alt="{{ blog.data.imageAlt }}" 
+      class="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover fix-filter"
+      loading="lazy">
     <div class="absolute inset-0 rounded-2xl"></div>
   </div>
   <div>
