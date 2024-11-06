@@ -1,12 +1,9 @@
 // Function to toggle 'inverted' class and persist the state
 function toggleInvert() {
-  const canvas = document.getElementById("canvas");
-  const page = document.getElementById("page");
   const isInverted = localStorage.getItem("isInverted") === "true";
 
-  // Toggle class on both elements (canvas and page)
-  if (canvas) canvas.classList.toggle("inverted", !isInverted);
-  if (page) page.classList.toggle("inverted", !isInverted);
+  // Toggle class on the <html> element directly
+  document.documentElement.classList.toggle("inverted", !isInverted);
 
   // Store the new state in localStorage
   localStorage.setItem("isInverted", !isInverted);
@@ -71,11 +68,6 @@ function applyImageFilters(isInverted) {
 // Set up the initial state based on localStorage
 function initializeInvertState() {
   const isInverted = localStorage.getItem("isInverted") === "true";
-  const canvas = document.getElementById("canvas");
-  const page = document.getElementById("page");
-
-  if (canvas) canvas.classList.toggle("inverted", isInverted);
-  if (page) page.classList.toggle("inverted", isInverted);
 
   // Set the correct icon and color on load
   toggleIcons(isInverted);
@@ -89,5 +81,5 @@ document
   .getElementById("toggle-invert")
   .addEventListener("click", toggleInvert);
 
-// Initialize the state when the page loads
-window.addEventListener("load", initializeInvertState);
+// Initialize the state immediately after defining functions
+initializeInvertState();
