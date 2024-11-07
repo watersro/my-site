@@ -5,7 +5,7 @@ title: "GreenSpire Landing page | Freelance Web Developer | Roman Waters"
 
 summary: "A demo landing page, showcasing how my web design could benefit your business."
 
-image: /assets/images/demo-greenspire.png
+image: /assets/images/demo-greenspire.webp
 
 imageAlt: "Screenshots of GreenSpire Landing Page"
 

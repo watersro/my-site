@@ -2,8 +2,11 @@
 headline: "Why Your Business Needs a Professional Website"
 title: "Why Your Business Needs a Professional Website | Freelance Web Developer | Roman Waters"
 summary: "Discover why a professional website is crucial for your business. Learn how it boosts credibility, visibility, and customer trust, providing a competitive edge and driving success in the digital age."
-image: /assets/images/blog/blog1.1.png
-imageAlt:
+image: /assets/images/blog/blog1.1.webp
+image_small: /assets/images/blog/blog1.1_small.webp
+image_medium: /assets/images/blog/blog1.1_medium.webp
+image_large: /assets/images/blog/blog1.large.webp
+imageAlt: "Desk photo"
 date: "2024-05-27"
 prettyDate: "May 27th, 2024"
 tags: ["Featured", "Business"]

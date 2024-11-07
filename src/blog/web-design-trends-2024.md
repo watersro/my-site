@@ -12,15 +12,15 @@ image4: /assets/images/blog/blog2.4.avif
 imageAlt4: "3D elements"
 image5: /assets/images/blog/blog2.5.svg
 imageAlt5: "Custom illustrations"
-image6: /assets/images/blog/blog2.6.png
+image6: /assets/images/blog/blog2.6.webp
 imageAlt6: "Voice over interface"
-image7: /assets/images/blog/blog2.7.png
+image7: /assets/images/blog/blog2.7.webp
 imageAlt7: "AR Website"
-image8: /assets/images/blog/blog2.8.png
+image8: /assets/images/blog/blog2.8.webp
 imageAlt8: "AI integrations"
-image9: /assets/images/blog/blog2.9.png
+image9: /assets/images/blog/blog2.9.webp
 imageAlt9: "Bold Typography"
-image10: /assets/images/blog/blog2.10.png
+image10: /assets/images/blog/blog2.10.webp
 imageAlt10: "Plant leaf in painted hand"
 date: "2024-05-27"
 prettyDate: "May 27th, 2024"

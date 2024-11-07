@@ -14,17 +14,33 @@ document.addEventListener("DOMContentLoaded", function () {
       yPercent: -50,
     });
 
+    // Retrieve the last cursor position from sessionStorage (if available)
+    const lastX = sessionStorage.getItem("cursorX");
+    const lastY = sessionStorage.getItem("cursorY");
+
+    if (lastX && lastY) {
+      gsap.set(cursorBigCircle, { x: lastX, y: lastY });
+      gsap.set(cursorSmallCircle, { x: lastX, y: lastY });
+    }
+
     document.addEventListener("mousemove", function (e) {
+      const { clientX, clientY } = e;
+
+      // Store the cursor's current position in sessionStorage
+      sessionStorage.setItem("cursorX", clientX);
+      sessionStorage.setItem("cursorY", clientY);
+
+      // Move the cursor elements to the new position
       gsap.to(cursorBigCircle, {
         duration: 0.1,
-        x: e.clientX,
-        y: e.clientY,
+        x: clientX,
+        y: clientY,
         overwrite: "auto",
       });
       gsap.to(cursorSmallCircle, {
         duration: 0.1,
-        x: e.clientX,
-        y: e.clientY,
+        x: clientX,
+        y: clientY,
         overwrite: "auto",
       });
     });

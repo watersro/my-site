@@ -5,11 +5,11 @@ title: "Eden Perfumes | Freelance Web Developer | Roman Waters"
 
 summary: "Maintaining and developing Eden Perfumes online store"
 
-image: /assets/images/eden1.png
+image: /assets/images/eden1.webp
 
 imageAlt: "Screenshot of Eden Perfumes Landing Page"
 
-image2: /assets/images/eden2.png
+image2: /assets/images/eden2.webp
 
 imageAlt2: "Screenshot of developing a responsive product page"
 
