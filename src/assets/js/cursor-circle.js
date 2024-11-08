@@ -15,22 +15,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Retrieve the last cursor position from sessionStorage (if available)
-    const lastX = sessionStorage.getItem("cursorX");
-    const lastY = sessionStorage.getItem("cursorY");
+    const lastX = sessionStorage.getItem("cursorX") || window.innerWidth / 2;
+    const lastY = sessionStorage.getItem("cursorY") || window.innerHeight / 2;
 
-    if (lastX && lastY) {
-      gsap.set(cursorBigCircle, { x: lastX, y: lastY });
-      gsap.set(cursorSmallCircle, { x: lastX, y: lastY });
-    }
+    // Immediately set cursor position based on last stored position
+    gsap.set(cursorBigCircle, { x: lastX, y: lastY });
+    gsap.set(cursorSmallCircle, { x: lastX, y: lastY });
 
     document.addEventListener("mousemove", function (e) {
       const { clientX, clientY } = e;
 
-      // Store the cursor's current position in sessionStorage
+      // Update sessionStorage with the latest cursor position
       sessionStorage.setItem("cursorX", clientX);
       sessionStorage.setItem("cursorY", clientY);
 
-      // Move the cursor elements to the new position
+      // Smoothly move the cursor elements to the new position
       gsap.to(cursorBigCircle, {
         duration: 0.1,
         x: clientX,
@@ -45,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
+    // Add hover effects for links or elements with 'hoverable' class
     const hoverables = document.querySelectorAll("a, .hoverable");
     hoverables.forEach((item) => {
       item.addEventListener("mouseenter", () => {

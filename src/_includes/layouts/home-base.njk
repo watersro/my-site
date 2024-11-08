@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="/assets/js/vendor/gsap.min.js"></script>
+    <script>
+      // Set dark mode state based on localStorage
+      (function() {
+        const isInverted = localStorage.getItem("isInverted") === "true";
+        if (isInverted) {
+          document.documentElement.classList.add("inverted");
+        }
+      })();
+requestAnimationFrame(() => {
+      const lastX = sessionStorage.getItem("cursorX") || window.innerWidth / 2;
+      const lastY = sessionStorage.getItem("cursorY") || window.innerHeight / 2;
+
+      if (window.gsap) {
+        gsap.set(".cursor__ball--big", { x: lastX, y: lastY });
+        gsap.set(".cursor__ball", { x: lastX, y: lastY });
+      }
+    });
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,17 +38,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{'/assets/css/style.css' | url | safe}}">
     <title>{{ title }}</title>
-    <head>
+        <script src="/assets/js/cursor-circle.js"></script>
   <script>
-    (function() {
-      const isInverted = localStorage.getItem("isInverted") === "true";
-      if (isInverted) {
-        document.documentElement.classList.add("inverted");
-      }
-    })();
-  </script>
-</head>
+      // Set dark mode state based on localStorage
+      (function() {
+        const isInverted = localStorage.getItem("isInverted") === "true";
+        if (isInverted) {
+          document.documentElement.classList.add("inverted");
+        }
+      })();
 
+      // Set initial cursor position based on last known location
+      document.addEventListener("DOMContentLoaded", function () {
+        const lastX = sessionStorage.getItem("cursorX") || window.innerWidth / 2;
+        const lastY = sessionStorage.getItem("cursorY") || window.innerHeight / 2;
+
+        if (window.gsap) {
+          gsap.set(".cursor__ball--big", { x: lastX, y: lastY });
+          gsap.set(".cursor__ball", { x: lastX, y: lastY });
+        }
+      });
+
+  </script>
   </head>
 
   <body class="font-body relative">
@@ -71,13 +101,13 @@
       </svg>
 
     </button>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/simplex-noise/simplex-noise.min.js"></script>
     <script src="/assets/js/background-animation.js"></script>
 
     <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/cursor-circle.js"></script>
+
     <script src="/assets/js/invert.js"></script>
 
   </body>
