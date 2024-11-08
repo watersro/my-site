@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Azeret Mono";
+  src: url("/assets/fonts/AzeretMonoVF.woff2") format("woff2"),
+    url("/assets/fonts/AzeretMonoVF.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Azeret Mono";
+  src: url("/assets/fonts/AzeretMonoVF.woff2") format("woff2"),
+    url("/assets/fonts/AzeretMonoVF.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --neutral-slate: #efefef;
   --carbon-grey: #a9a9a9;
