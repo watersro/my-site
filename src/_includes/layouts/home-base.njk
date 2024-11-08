@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="/assets/js/vendor/gsap.min.js"></script>
+    <script>
+      // Set dark mode state based on localStorage
+      (function() {
+        const isInverted = localStorage.getItem("isInverted") === "true";
+        if (isInverted) {
+          document.documentElement.classList.add("inverted");
+        }
+      })();
+requestAnimationFrame(() => {
+      const lastX = sessionStorage.getItem("cursorX") || window.innerWidth / 2;
+      const lastY = sessionStorage.getItem("cursorY") || window.innerHeight / 2;
+
+      if (window.gsap) {
+        gsap.set(".cursor__ball--big", { x: lastX, y: lastY });
+        gsap.set(".cursor__ball", { x: lastX, y: lastY });
+      }
+    });
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,22 +33,31 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preload" href="/assets/fonts/AzeretMonoVF.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="{{'/assets/css/style.css' | url | safe}}">
     <title>{{ title }}</title>
-    <head>
+        <script src="/assets/js/cursor-circle.js"></script>
   <script>
-    (function() {
-      const isInverted = localStorage.getItem("isInverted") === "true";
-      if (isInverted) {
-        document.documentElement.classList.add("inverted");
-      }
-    })();
-  </script>
-</head>
+      // Set dark mode state based on localStorage
+      (function() {
+        const isInverted = localStorage.getItem("isInverted") === "true";
+        if (isInverted) {
+          document.documentElement.classList.add("inverted");
+        }
+      })();
 
+      // Set initial cursor position based on last known location
+      document.addEventListener("DOMContentLoaded", function () {
+        const lastX = sessionStorage.getItem("cursorX") || window.innerWidth / 2;
+        const lastY = sessionStorage.getItem("cursorY") || window.innerHeight / 2;
+
+        if (window.gsap) {
+          gsap.set(".cursor__ball--big", { x: lastX, y: lastY });
+          gsap.set(".cursor__ball", { x: lastX, y: lastY });
+        }
+      });
+
+  </script>
   </head>
 
   <body class="font-body relative">
@@ -53,7 +81,7 @@
 
     </div>
     <button id="toggle-invert" class="fixed bottom-4 right-4 p-2 rounded-full shadow-lg z-10 bg-gray-800 text-white hover:bg-gray-700 transition" alt="Dark and light mode toggle">
-      <svg id="dark-icon" class="h-6 w-6 icon-color hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <svg id="dark-icon" class="h-6 w-6 icon-color hidden inverted" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 118.646 3.646 9.003 9.003 0 0020.354 15.354z"></path>
       </svg>
       <svg id="light-icon" class="h-6 w-6 hidden icon-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -71,13 +99,13 @@
       </svg>
 
     </button>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/simplex-noise/simplex-noise.min.js"></script>
     <script src="/assets/js/background-animation.js"></script>
 
     <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/cursor-circle.js"></script>
+
     <script src="/assets/js/invert.js"></script>
 
   </body>
