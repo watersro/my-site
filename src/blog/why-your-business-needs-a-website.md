@@ -5,7 +5,7 @@ summary: "Discover why a professional website is crucial for your business. Lear
 image: /assets/images/blog/blog1.1.webp
 image_small: /assets/images/blog/blog1.1_small.webp
 image_medium: /assets/images/blog/blog1.1_medium.webp
-image_large: /assets/images/blog/blog1.large.webp
+image_large: /assets/images/blog/blog1.1_large.webp
 imageAlt: "Desk photo"
 date: "2024-05-27"
 prettyDate: "May 27th, 2024"
