@@ -59,34 +59,31 @@ module.exports = function (eleventyConfig) {
     return `<a href="${path}">${text}</a>`;
   });
   eleventyConfig.addNunjucksAsyncShortcode("EleventyImage", imageShortcode);
-  eleventyConfig.addShortcode("blogImage", function (image, imageAlt) {
+    eleventyConfig.addShortcode("blogImage", function (image, imageAlt) {
     const extension = image.split(".").pop().toLowerCase();
     const responsiveFormats = ["jpg", "jpeg", "png", "webp", "avif"];
     const isResponsive = responsiveFormats.includes(extension);
 
-    // Generate the HTML for the <img> tag with proper indentation
-    return `
-      <img 
-        class="w-full h-auto rounded-md shadow-lg fix-filter" 
-        src="${image}" 
-        ${
-          isResponsive
-            ? `srcset="${image.replace(/\.[^.]+$/, "_small.$&")} 640w, 
-                                 ${image.replace(
-                                   /\.[^.]+$/,
-                                   "_medium.$&"
-                                 )} 1024w, 
-                                 ${image.replace(
-                                   /\.[^.]+$/,
-                                   "_large.$&"
-                                 )} 1600w"
-                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"`
-            : ""
-        }
-        alt="${imageAlt}" 
-        loading="lazy">
-    `.trim();
+    // Start constructing the <img> tag
+    let imgTag = `<img class="w-full h-auto rounded-md shadow-lg fix-filter" src="${image}"`;
+
+    // Add srcset and sizes if the image is responsive
+    if (isResponsive) {
+      imgTag += ` srcset="${image.replace(
+        /\.[^.]+$/,
+        "_small$&"
+      )} 640w, ${image.replace(/\.[^.]+$/, "_medium$&")} 1024w, ${image.replace(
+        /\.[^.]+$/,
+        "_large$&"
+      )} 1600w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"`;
+    }
+
+    // Close the <img> tag with alt and loading attributes
+    imgTag += ` alt="${imageAlt}" loading="lazy">`;
+
+    return imgTag;
   });
+
 
   // Directory settings
   return {
