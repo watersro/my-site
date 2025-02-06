@@ -19,7 +19,7 @@ tech:
   - "CSS"
   - "PHP"
 
-siteUrl: "https:edenperfumes.co.uk"
+siteUrl: "https://edenperfumes.co.uk"
 
 repoUrl: "#"
 

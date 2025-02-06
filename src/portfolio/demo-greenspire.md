@@ -60,4 +60,4 @@ The new landing page for GreenSpire Landscaping successfully marries the brand�
 
 This project underscored the value of aligning web design with a client’s core values and industry specifics. The fusion of sustainability with digital design not only elevates the brand but also speaks directly to the target audience’s preferences and concerns. It demonstrated that effective web design goes beyond aesthetics, serving as a powerful tool for storytelling and brand positioning.
 
-{% pdfLink "https://cdn.wtro.in/demo_greenspire.pdf", "View the whole design" %}
+{% pdfLink "https://www.figma.com/proto/W6YZSfbxY9K8oFaGZwgziv/Greenspire-demo-page?node-id=10-758&p=f&t=GjjA1mXFM0r8OmJZ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1", "View the design" %}

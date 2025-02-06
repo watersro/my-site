@@ -61,4 +61,4 @@ The redesigned services page for Zay Accountants successfully merges the firm's 
 
 This project highlighted the importance of balancing industry standards with innovative design elements. The use of bold colors in professional service websites, when done correctly, can significantly enhance brand identity and user engagement.
 
-{% pdfLink "https://cdn.wtro.in/demo_services.pdf", "View the whole design" %}
+{% pdfLink "https://www.figma.com/proto/Rg2dW6nsYaQD41lBtcwjh3/Demo%3A-Services-page?node-id=2-120&t=JgYNQZuqgxS9VU0m-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1", "View the whole design" %}
