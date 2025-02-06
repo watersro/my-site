@@ -67,7 +67,18 @@ function applyImageFilters(isInverted) {
 
 // Set up the initial state based on localStorage
 function initializeInvertState() {
-  const isInverted = localStorage.getItem("isInverted") === "true";
+  let isInverted = localStorage.getItem("isInverted");
+
+  if (isInverted === null) {
+    // Default to light mode (not inverted)
+    isInverted = "false";
+    localStorage.setItem("isInverted", isInverted);
+  }
+
+  isInverted = isInverted === "true"; // Convert to boolean
+
+  // Apply the mode to the HTML element
+  document.documentElement.classList.toggle("inverted", isInverted);
 
   // Set the correct icon and color on load
   toggleIcons(isInverted);

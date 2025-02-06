@@ -5,20 +5,35 @@
     <script>
       // Set dark mode state based on localStorage
       (function() {
-        const isInverted = localStorage.getItem("isInverted") === "true";
+        let isInverted = localStorage.getItem("isInverted");
+
+        if (isInverted === null) {
+          // Default to light mode (not inverted)
+          isInverted = "false";
+          localStorage.setItem("isInverted", isInverted);
+        }
+
+        isInverted = isInverted === "true"; // Convert to boolean
+
+        // Apply the correct mode immediately
         if (isInverted) {
           document.documentElement.classList.add("inverted");
+        } else {
+          document.documentElement.classList.remove("inverted");
         }
       })();
-requestAnimationFrame(() => {
-      const lastX = sessionStorage.getItem("cursorX") || window.innerWidth / 2;
-      const lastY = sessionStorage.getItem("cursorY") || window.innerHeight / 2;
 
-      if (window.gsap) {
-        gsap.set(".cursor__ball--big", { x: lastX, y: lastY });
-        gsap.set(".cursor__ball", { x: lastX, y: lastY });
-      }
-    });
+
+
+      requestAnimationFrame(() => {
+        const lastX = sessionStorage.getItem("cursorX") || window.innerWidth / 2;
+        const lastY = sessionStorage.getItem("cursorY") || window.innerHeight / 2;
+
+        if (window.gsap) {
+          gsap.set(".cursor__ball--big", { x: lastX, y: lastY });
+          gsap.set(".cursor__ball", { x: lastX, y: lastY });
+        }
+      });
     </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

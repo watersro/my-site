@@ -5,11 +5,25 @@
     <script>
       // Set dark mode state based on localStorage
       (function() {
-        const isInverted = localStorage.getItem("isInverted") === "true";
+        let isInverted = localStorage.getItem("isInverted");
+
+        if (isInverted === null) {
+          // Default to light mode (not inverted)
+          isInverted = "false";
+          localStorage.setItem("isInverted", isInverted);
+        }
+
+        isInverted = isInverted === "true"; // Convert to boolean
+
+        // Apply the correct mode immediately
         if (isInverted) {
           document.documentElement.classList.add("inverted");
+        } else {
+          document.documentElement.classList.remove("inverted");
         }
       })();
+
+
 requestAnimationFrame(() => {
       const lastX = sessionStorage.getItem("cursorX") || window.innerWidth / 2;
       const lastY = sessionStorage.getItem("cursorY") || window.innerHeight / 2;
@@ -61,7 +75,7 @@ requestAnimationFrame(() => {
       {% include "components/footer.njk" %}
     </div>
     <button aria-label="Dark mode toggle" id="toggle-invert" class="fixed bottom-4 right-4 p-2 rounded-full shadow-lg z-10 bg-gray-800 text-white hover:bg-gray-700 transition" alt="Dark and light mode toggle" >
-      <svg id="dark-icon" class="h-6 w-6 icon-color hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <svg id="dark-icon" class="h-6 w-6 icon-color hidden inverted" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 118.646 3.646 9.003 9.003 0 0020.354 15.354z"></path>
       </svg>
       <svg id="light-icon" class="h-6 w-6 hidden icon-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
