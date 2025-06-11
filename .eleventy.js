@@ -1,4 +1,5 @@
 const Image = require("@11ty/eleventy-img");
+const site = require("./src/_data/site.js");
 
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(`./src${src}`, {
@@ -59,7 +60,7 @@ module.exports = function (eleventyConfig) {
     return `<a href="${path}">${text}</a>`;
   });
   eleventyConfig.addNunjucksAsyncShortcode("EleventyImage", imageShortcode);
-    eleventyConfig.addShortcode("blogImage", function (image, imageAlt) {
+  eleventyConfig.addShortcode("blogImage", function (image, imageAlt) {
     const extension = image.split(".").pop().toLowerCase();
     const responsiveFormats = ["jpg", "jpeg", "png", "webp", "avif"];
     const isResponsive = responsiveFormats.includes(extension);
@@ -84,6 +85,10 @@ module.exports = function (eleventyConfig) {
     return imgTag;
   });
 
+  eleventyConfig.addFilter(
+    "toAbsoluteUrl",
+    (url) => new URL(url, site.baseUrl).href
+  );
 
   // Directory settings
   return {
