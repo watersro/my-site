@@ -22,9 +22,9 @@ repoUrl: "#"
 date: "2025-01-31"
 ---
 
-# Aspire Bright
+## Aspire Bright
 
-## Client Overview
+### Client Overview
 
 **Client:** Caroline at Aspire Bright  
 **Industry:** Youth Charity  
@@ -40,7 +40,7 @@ date: "2025-01-31"
 
 <br />
 
-## A Personal Note
+### A Personal Note
 
 It has been very enjoyable working with Caroline on this site, and I'm looking forward to seeing Aspire Bright grow. Providing support for young people has always been close to my heart, and being able to be at around for the start of a new project helping young people approaching adulthood is a great privilege. As we continue to work on this site and their online presence, I look forward to help bring in funding and spread awareness for this wonderful project. 
 
