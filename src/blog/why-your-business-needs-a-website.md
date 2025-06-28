@@ -62,7 +62,7 @@ As your business grows, your website can grow with it. You can add new features,
 
 Investing in a professional website is one of the best decisions you can make for your business. It enhances your credibility, increases your visibility, and provides a platform to showcase your products and services. In a competitive market, a well-designed website can set you apart and drive your business towards success.
 
-**{% blogLink "https://romanwaters.com/contact", "Want to enhance your online presence? Get in touch today to get started on your professional website." %}**
+**{% blogLink "https://romanwaters.com/contact/", "Want to enhance your online presence? Get in touch today to get started on your professional website." %}**
 
 ---
 

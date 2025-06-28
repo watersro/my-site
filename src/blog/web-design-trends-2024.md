@@ -95,7 +95,7 @@ Sustainability is becoming a significant consideration in web design. This inclu
 
 Keeping up with web design trends is crucial for maintaining a modern and user-friendly website. By incorporating these trends, you can enhance user experience, improve engagement, and stay ahead of the competition.
 
-**Does your website use the latest design trends? {% blogLink "https://romanwaters.com/contact", "Contact" %} me now to get started on your 2024 website redesign.**
+**Does your website use the latest design trends? {% blogLink "https://romanwaters.com/contact/", "Contact" %} me now to get started on your 2024 website redesign.**
 
 ---
 
