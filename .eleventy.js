@@ -22,6 +22,7 @@ async function imageShortcode(src, alt, sizes) {
 module.exports = function (eleventyConfig) {
   // Passthrough copy for specific files and directories
   eleventyConfig.addPassthroughCopy("./src/_redirects");
+  eleventyConfig.addPassthroughCopy("./src/_headers");
   eleventyConfig.addPassthroughCopy("./src/assets/js");
   eleventyConfig.addPassthroughCopy("./src/assets/images/");
   eleventyConfig.addPassthroughCopy({ "./src/assets/favicons": "/" });
