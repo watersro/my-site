@@ -7,7 +7,9 @@
   function setCookie(name, value, days) {
     const expires = new Date();
     expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
-    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Strict`;
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Strict;Secure`;
+    // Also store in localStorage for faster access
+    localStorage.setItem(name, value);
   }
 
   function getCookie(name) {
@@ -50,6 +52,8 @@
     hideBanner();
     // Enable analytics if cookies are accepted
     enableAnalytics();
+    // Dispatch event to trigger GA loading
+    window.dispatchEvent(new CustomEvent("cookieConsentChanged"));
   }
 
   function declineCookies() {
@@ -60,19 +64,25 @@
   }
 
   function enableAnalytics() {
-    // Enable Google Analytics
+    // Enable Google Analytics with minimal third-party data sharing
     if (typeof gtag !== "undefined") {
       gtag("consent", "update", {
         analytics_storage: "granted",
+        ad_storage: "denied", // Keep ad storage denied for privacy
+        ad_user_data: "denied", // Deny ad user data
+        ad_personalization: "denied", // Deny ad personalization
       });
     }
   }
 
   function disableAnalytics() {
-    // Disable Google Analytics
+    // Disable Google Analytics completely
     if (typeof gtag !== "undefined") {
       gtag("consent", "update", {
         analytics_storage: "denied",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
       });
     }
   }
@@ -80,6 +90,7 @@
   function manageCookies() {
     // Clear existing cookie consent to force the banner to show again
     document.cookie = `${COOKIE_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+    localStorage.removeItem("cookie-consent"); // Also clear localStorage
     showBanner();
   }
 
