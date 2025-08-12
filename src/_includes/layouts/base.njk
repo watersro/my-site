@@ -2,35 +2,8 @@
 <html lang="en">
   <head>
     <script src="/assets/js/vendor/gsap.min.js"></script>
-    <script>
-      // Set dark mode state based on localStorage
-      (function() {
-        let isInverted = localStorage.getItem("isInverted");
-
-        if (isInverted === null) {
-          // Default to light mode (which means "inverted" is applied)
-          isInverted = "true"; // Set it to true so that .inverted is added
-          localStorage.setItem("isInverted", isInverted);
-        }
-
-        isInverted = isInverted === "true"; // Convert to boolean
-
-        // Ensure the class is applied based on the state
-        document.documentElement.classList.toggle("inverted", isInverted);
-      })();
-
-
-
-requestAnimationFrame(() => {
-      const lastX = sessionStorage.getItem("cursorX") || window.innerWidth / 2;
-      const lastY = sessionStorage.getItem("cursorY") || window.innerHeight / 2;
-
-      if (window.gsap) {
-        gsap.set(".cursor__ball--big", { x: lastX, y: lastY });
-        gsap.set(".cursor__ball", { x: lastX, y: lastY });
-      }
-    });
-    </script>
+    <script src="/assets/js/dark-mode-init.js"></script>
+    <script src="/assets/js/cursor-init.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,18 +24,7 @@ requestAnimationFrame(() => {
     <script src="/assets/js/cursor-circle.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KX7SGWZHD6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      // Set default consent to denied
-      gtag('consent', 'default', {
-        'analytics_storage': 'denied'
-      });
-
-      gtag('config', 'G-KX7SGWZHD6');
-    </script>
+    <script src="/assets/js/analytics-init.js"></script>
   
   </head>
 
@@ -107,7 +69,7 @@ requestAnimationFrame(() => {
     
     {% include "components/cookie-banner.njk" %}
     
-    <script src="https://cdn.jsdelivr.net/npm/simplex-noise/simplex-noise.min.js"></script>
+    <script src="/assets/js/vendor/simplex-noise.min.js"></script>
     <script src="/assets/js/background-animation.js"></script>
 
     <script src="/assets/js/main.js"></script>
