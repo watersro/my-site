@@ -71,6 +71,20 @@
       });
 
   </script>
+  <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KX7SGWZHD6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      // Set default consent to denied
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+      });
+
+      gtag('config', 'G-KX7SGWZHD6');
+    </script>
   </head>
 
   <body class="font-body relative">
@@ -113,12 +127,12 @@
 
     </button>
     
+      {% include "components/cookie-banner.njk" %}
 
     <script src="https://cdn.jsdelivr.net/npm/simplex-noise/simplex-noise.min.js"></script>
     <script src="/assets/js/background-animation.js"></script>
-
     <script src="/assets/js/main.js"></script>
-
+    <script src="/assets/js/cookie-banner.js"></script>
     <script src="/assets/js/invert.js"></script>
 
   </body>

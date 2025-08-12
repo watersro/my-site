@@ -49,7 +49,20 @@ requestAnimationFrame(() => {
     <link rel="canonical" href="{{ page.url | toAbsoluteUrl }}">
     <title>{{ title }}</title>
     <script src="/assets/js/cursor-circle.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KX7SGWZHD6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
+      // Set default consent to denied
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+      });
+
+      gtag('config', 'G-KX7SGWZHD6');
+    </script>
   
   </head>
 
@@ -72,6 +85,7 @@ requestAnimationFrame(() => {
       </main>
       {% include "components/footer.njk" %}
     </div>
+    
     <button aria-label="Dark mode toggle" id="toggle-invert" class="fixed bottom-4 right-4 p-2 rounded-full shadow-lg z-10 bg-gray-800 text-white hover:bg-gray-700 transition hoverable" alt="Dark and light mode toggle" >
       <svg id="dark-icon" class="h-6 w-6 icon-color hidden inverted" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 118.646 3.646 9.003 9.003 0 0020.354 15.354z"></path>
@@ -89,14 +103,16 @@ requestAnimationFrame(() => {
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </g>
       </svg>
-
     </button>
-
+    
+    {% include "components/cookie-banner.njk" %}
+    
     <script src="https://cdn.jsdelivr.net/npm/simplex-noise/simplex-noise.min.js"></script>
     <script src="/assets/js/background-animation.js"></script>
 
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/cursor-circle.js"></script>
+    <script src="/assets/js/cookie-banner.js"></script>
     <script src="/assets/js/invert.js"></script>
   </body>
 </html>
