@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: "components/project.njk"
 title: Privacy Policy - Roman Waters
 description: Privacy policy for Roman Waters freelance web services, detailing how we collect, use and protect your personal data in accordance with UK and EU privacy laws.
 ---
