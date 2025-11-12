@@ -1,3 +1,6 @@
 /book https://fantastical.app/roman-waters/book-a-consultation
 /portfolio /work 301
+/portfolio/eden-perfumes /work/eden-perfumes 301
+/portfolio/aspire-bright /work/aspire-bright 301
+/portfolio/brighton-taxi-tours /work/brighton-taxi-tours 301
 https://romanwaters.netlify.app/* https://romanwaters.com/:splat 301!

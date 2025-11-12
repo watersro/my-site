@@ -13,8 +13,17 @@ layout: "layouts/base.njk"
   </div>
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      {# First show featured projects #}
+      {% for project in collections.portfolio %}
+        {% if project.data.featured %}
+          {% include "components/project-card.njk" %}
+        {% endif %}
+      {% endfor %}
+      {# Then show non-featured projects in reverse date order #}
       {% for project in collections.portfolio | reverse %}
-        {% include "components/project-card.njk" %}
+        {% if not project.data.featured %}
+          {% include "components/project-card.njk" %}
+        {% endif %}
       {% endfor %}
     </div>
   </div>
