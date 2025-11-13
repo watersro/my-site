@@ -9,13 +9,13 @@ module.exports = {
       fontFamily: {
         mono: ["Azeret Mono", "monospace"],
       },
+      colors: {
+        "custom-slate": "#fff9dd",
+      },
     },
     screens: {
       xs: "475px",
       ...defaultTheme.screens,
-    },
-    colors: {
-      "custom-slate": "#fff9dd",
     },
     animation: {
       "pulse-slow": "pulse 4s linear infinite",

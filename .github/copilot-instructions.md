@@ -19,7 +19,7 @@
 
 ## Code Quality
 - Use meaningful variable and function names that clearly describe their purpose
-- Include helpful comments for complex logic, otherwise keep code self-explanatory
+- Include helpful comments for complex logic, otherwise keep code self-explanatory and don't over-comment
 - Write modular and reusable code by breaking down large functions into smaller ones
 - Follow DRY (Don't Repeat Yourself) principle to avoid code duplication
 - Ensure proper indentation and spacing for better readability
