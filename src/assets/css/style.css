@@ -67,8 +67,30 @@ body {
   flex-direction: column;
   background-color: var(--background-col);
   transition: background-color 0.4s ease;
-  color: theme("colors.custom-slate");
+  color: var(--default-text);
   font-family: theme("fontFamily.mono");
+}
+
+/* Normalize all text colors to use default text variable */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+a,
+li,
+td,
+th,
+label,
+input,
+textarea,
+select,
+button {
+  color: var(--default-text);
 }
 
 ul,
@@ -224,7 +246,6 @@ textarea {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 4rem;
   padding: 1rem 1.5rem;
   flex-direction: row;
   opacity: 0.9;
@@ -759,7 +780,6 @@ textarea {
     flex-direction: row; /* Ensure items are horizontally aligned */
     justify-content: space-between; /* Space between the title and links */
     align-items: center; /* Align items vertically */
-    margin-bottom: 1.5rem;
     position: sticky;
   }
 
