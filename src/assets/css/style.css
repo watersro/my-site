@@ -958,3 +958,8 @@ li::before {
 .inverted img.fix-filter {
   filter: invert(1) grayscale(1); /* Apply both invert and grayscale */
 }
+
+/* Exclude project card images from greyscale filter */
+.inverted article img {
+  filter: none; /* Remove all filters from project card images */
+}

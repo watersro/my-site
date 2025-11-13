@@ -67,7 +67,7 @@ module.exports = function (eleventyConfig) {
     const isResponsive = responsiveFormats.includes(extension);
 
     // Start constructing the <img> tag
-    let imgTag = `<img class="w-full h-auto rounded-md shadow-lg fix-filter" src="${image}"`;
+    let imgTag = `<img class="w-full h-auto rounded-md shadow-lg" src="${image}"`;
 
     // Add srcset and sizes if the image is responsive
     if (isResponsive) {
