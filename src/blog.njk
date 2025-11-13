@@ -26,7 +26,7 @@ permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber
           {% for blog in posts %}
             {% include "components/blog-card.njk" %}
             {% if loop.index < loop.length %}
-              <div class="mt-6 flex border-t border-gray-900/5 pt-6"></div>
+              <div class="mt-6 flex border-t pt-6"></div>
             {% endif %}
           {% endfor %}
 
@@ -36,18 +36,18 @@ permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber
     <!-- Right side section -->
     <div class="w-full lg:w-4/12">
       <div class="lg:mt-20 bg-slate-950-50-opacity rounded-xl">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl p-8">Featured Posts</h2>
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl p-8">Featured Posts</h2>
         <div class="relative p-8 mb-8 bg-primary">
           {% set featuredPosts = collections.featuredPosts %}
 
           {% for blog in featuredPosts %}
-            <div class="pb-6 {% if not loop.last %}border-b border-white/30{% endif %}">
+            <div class="pb-6 {% if not loop.last %}border-b{% endif %}">
               <h3 class="pt-6">
                 <a href="{{ blog.url }}" class="inline-block mb-3 text-xl font-semibold">
                   {{ blog.data.headline }}
                 </a>
               </h3>
-              <time datetime="{{ blog.data.date }}" class="text-gray-500">{{ blog.data.prettyDate }}</time>
+              <time datetime="{{ blog.data.date }}" class="">{{ blog.data.prettyDate }}</time>
             </div>
           {% endfor %}
 
