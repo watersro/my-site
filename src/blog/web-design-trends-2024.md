@@ -1,7 +1,7 @@
 ---
 headline: "Web Design Trends for 2024"
-title: "Web Design Trends for 2024 | Freelance Web Developer | Roman Waters"
-summary: "Stay ahead of the curve with the latest web design trends for 2024. Dark mode, minimalistic design, 3D elements, and more can elevate your website's user experience and engagement."
+title: "Web Design Trends 2024 Brighton | Roman Waters"
+summary: "Stay ahead with the latest web design trends for 2024. Dark mode, minimalistic design, 3D elements, and more can elevate your Brighton business website's user experience."
 image: /assets/images/blog/blog2.1.svg
 imageAlt: "Dark mode and Light mode illustration"
 image2: /assets/images/blog/blog2.2.gif
@@ -99,4 +99,4 @@ Keeping up with web design trends is crucial for maintaining a modern and user-f
 
 ---
 
-_Brighton and Hove Web Development Services | Professional Website Design | SEO Optimization_
+_Brighton Web Design Services | WordPress Development | SEO Optimisation_

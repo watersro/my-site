@@ -1,7 +1,7 @@
 ---
 headline: "Why Your Business Needs a Professional Website"
-title: "Why Your Business Needs a Professional Website | Freelance Web Developer | Roman Waters"
-summary: "Discover why a professional website is crucial for your business. Learn how it boosts credibility, visibility, and customer trust, providing a competitive edge and driving success in the digital age."
+title: "Why Your Business Needs a Website Brighton | Roman Waters"
+summary: "Discover why a professional website is crucial for your business. Learn how it boosts credibility, visibility, and customer trust, providing a competitive edge for Brighton businesses."
 image: /assets/images/blog/blog1.1.webp
 image_small: /assets/images/blog/blog1.1_small.webp
 image_medium: /assets/images/blog/blog1.1_medium.webp
@@ -66,4 +66,4 @@ Investing in a professional website is one of the best decisions you can make fo
 
 ---
 
-_Brighton and Hove Web Development Services | Professional Website Design | Web Maintenance | SEO Optimization_
+_Brighton Web Design Services | WordPress Development | Website Support | SEO Optimisation_
