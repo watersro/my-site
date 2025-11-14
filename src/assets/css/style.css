@@ -3,19 +3,23 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Azeret Mono";
-  src: url("/assets/fonts/AzeretMonoVF.woff2") format("woff2"),
-    url("/assets/fonts/AzeretMonoVF.ttf") format("truetype");
-  font-weight: 100 900;
+  font-family: "Satoshi";
+  src: url("/assets/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff2")
+      format("woff2"),
+    url("/assets/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.ttf")
+      format("truetype");
+  font-weight: 300 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Azeret Mono";
-  src: url("/assets/fonts/AzeretMonoVF.woff2") format("woff2"),
-    url("/assets/fonts/AzeretMonoVF.ttf") format("truetype");
-  font-weight: 100 900;
+  font-family: "Satoshi";
+  src: url("/assets/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-VariableItalic.woff2")
+      format("woff2"),
+    url("/assets/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-VariableItalic.ttf")
+      format("truetype");
+  font-weight: 300 900;
   font-style: italic;
   font-display: swap;
 }

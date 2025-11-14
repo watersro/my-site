@@ -7,10 +7,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mono: ["Azeret Mono", "monospace"],
+        mono: ["Satoshi", "sans-serif"],
       },
       colors: {
         "custom-slate": "#fff9dd",
+        "service-wordpress": "#8ac4ff",
+        "service-ecommerce": "#ACACDE",
+        "service-optimisation": "#E85F5C",
+        "service-support": "#773344",
       },
     },
     screens: {

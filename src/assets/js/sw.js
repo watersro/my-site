@@ -1,7 +1,7 @@
 const CACHE_NAME = "roman-waters-v1";
 const STATIC_ASSETS = [
   "/assets/css/style.css",
-  "/assets/fonts/AzeretMonoVF.woff2",
+  "/assets/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff2",
   "/assets/js/vendor/gsap.min.js",
   "/assets/js/main.js",
   "/assets/js/cursor-init.js",
