@@ -1,0 +1,28 @@
+{% set service = service or {
+  name: "",
+  description: "",
+  url: "",
+  provider: {
+    name: "Roman Waters",
+    url: "https://romanwaters.com/"
+  }
+} %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ service.name }}",
+  "description": "{{ service.description }}",
+  "provider": {
+    "@type": "Person",
+    "name": "{{ service.provider.name }}",
+    "url": "{{ service.provider.url }}"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United Kingdom"
+  },
+  "serviceType": "{{ service.name }}",
+  "url": "{{ service.url }}"
+}
+</script>

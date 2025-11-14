@@ -1,15 +1,17 @@
 ---
 title: "Ongoing Support & Maintenance | Roman Waters"
-metaDescription: "Reliable ongoing WordPress, WooCommerce, and Shopify website support and maintenance. Keep your site secure, updated, and performing optimally."
+metaDescription: "Reliable website support and maintenance for WordPress, WooCommerce, and Shopify. Secure, up-to-date, and performing at its best year-round."
 layout: "layouts/base.njk"
 permalink: "/services/website-support-maintenance/"
 ---
 <section>
-  <!-- Hero Section -->
+  
   <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-16">
     <div class="mx-auto max-w-4xl text-center">
       <h1 class="mt-6 block max-w-5xl font-display text-5xl font-medium tracking-tight [text-wrap:balance] sm:text-6xl mx-auto">Keep your site running smoothly, securely, and efficiently.</h1>
       <p class="mt-6 text-xl leading-8 mx-auto max-w-3xl">Reliable ongoing support and proactive maintenance for WordPress, WooCommerce, and Shopify websites.</p>
+      
+      <div class="h-1 w-24 bg-service-support mx-auto mt-6 rounded-full" aria-hidden="true"></div>
     </div>
   </div>
 
@@ -17,45 +19,49 @@ permalink: "/services/website-support-maintenance/"
   <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-20">
     <div class="mx-auto max-w-4xl">
       
-      <!-- Section 1: Peace of mind through proactive care -->
+      
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-6">Peace of mind through proactive care</h2>
+        <h2 class="text-3xl font-bold mb-2">Peace of mind through proactive care</h2>
+        <div class="h-1 w-16 bg-service-support rounded-full mb-6" aria-hidden="true"></div>
         <div class="prose prose-lg max-w-none">
           <p class="text-lg mb-6">Your website needs regular attention to stay secure, fast, and reliable. I provide ongoing maintenance that catches problems before they affect your visitors or business, keeping everything running smoothly without requiring your constant oversight.</p>
           <p class="text-lg">This includes regular WordPress, plugin, and theme updates to maintain security and compatibility, automated daily backups so you're protected against data loss, performance monitoring to catch slowdowns early, security scanning to identify vulnerabilities, and uptime monitoring to ensure your site stays accessible. Proactive maintenance prevents the emergencies that reactive support has to fix.</p>
         </div>
       </div>
 
-      <!-- Section 2: Continuous improvements -->
+      
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-6">Continuous improvements</h2>
+        <h2 class="text-3xl font-bold mb-2">Continuous improvements</h2>
+        <div class="h-1 w-16 bg-service-support rounded-full mb-6" aria-hidden="true"></div>
         <div class="prose prose-lg max-w-none">
           <p class="text-lg mb-6">Your business evolves, and your website should evolve with it. Ongoing support isn't just about keeping things working - it's about making incremental improvements that keep your site aligned with changing business needs and user expectations.</p>
           <p class="text-lg">This includes updating content to reflect new offerings or messaging, refining design elements based on user feedback, implementing small UX improvements to reduce friction, adding or modifying features as requirements change, and optimising for better performance or SEO. Regular, smaller updates are often more effective than infrequent major overhauls.</p>
         </div>
       </div>
 
-      <!-- Section 3: Priority support for long-term clients -->
+      
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-6">Priority support for long-term clients</h2>
+        <h2 class="text-3xl font-bold mb-2">Priority support for long-term clients</h2>
+        <div class="h-1 w-16 bg-service-support rounded-full mb-6" aria-hidden="true"></div>
         <div class="prose prose-lg max-w-none">
           <p class="text-lg mb-6">Retained clients receive priority response times and direct access when issues arise. Rather than waiting in a queue or explaining your setup repeatedly, you get fast turnaround from someone who already knows your site, your business, and your preferences.</p>
           <p class="text-lg">This ongoing relationship means more consistent quality, faster problem resolution, and a deeper understanding of your business that informs every decision. You're not starting from scratch each time you need something - we build on established knowledge and trust.</p>
         </div>
       </div>
 
-      <!-- Section 4: Transparent, flexible plans -->
+      
       <div class="mb-16">
-        <h2 class="text-3xl font-bold mb-6">Transparent, flexible plans</h2>
+        <h2 class="text-3xl font-bold mb-2">Transparent, flexible plans</h2>
+        <div class="h-1 w-16 bg-service-support rounded-full mb-6" aria-hidden="true"></div>
         <div class="prose prose-lg max-w-none">
           <p class="text-lg mb-6">Support plans are structured around your actual needs, not arbitrary tier limitations. Whether you need monthly hands-on maintenance or quarterly check-ins, we'll find an arrangement that provides the right level of support for your site's complexity and your team's capabilities.</p>
           <p class="text-lg">Plans typically include core maintenance (updates, backups, security monitoring), a set number of hours for improvements or fixes, and priority support access. Everything is transparent - you'll know exactly what's included, what support hours remain, and what additional work might cost. No hidden fees or surprise invoices.</p>
         </div>
       </div>
 
-      <!-- CTA Section -->
-      <div class="bg-slate-950-50-opacity p-12 rounded-xl text-center">
-        <h2 class="text-3xl font-bold mb-6">Explore support options</h2>
+      
+      <div class="bg-service-support p-12 rounded-xl text-center">
+        <h2 class="text-3xl font-bold mb-6 text-white">Explore support options</h2>
         <a href="/book/" class="inline-flex items-center px-8 py-4 text-lg font-semibold bg-white text-black rounded-lg hover:bg-gray-100 transition-colors duration-300">
           Book a Call
           <span class="ml-2 text-black" aria-hidden="true">→</span>
@@ -65,3 +71,14 @@ permalink: "/services/website-support-maintenance/"
     </div>
   </div>
 </section>
+{% include "components/local-business-schema.njk" %}
+{% set service = {
+  name: "Ongoing Support & Maintenance",
+  description: "Reliable website support and maintenance for WordPress, WooCommerce, and Shopify. Secure, up-to-date, and performing at its best year-round.",
+  url: "https://romanwaters.com/services/website-support-maintenance/",
+  provider: {
+    name: "Roman Waters",
+    url: "https://romanwaters.com/"
+  }
+} %}
+{% include "components/service-schema.njk" %}

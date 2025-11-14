@@ -1,25 +1,24 @@
 ---
 title: "Custom WordPress Development | Roman Waters"
-metaDescription: "Custom WordPress development focused on performance, usability, and flexibility. Clean code, fast loading times, and built to grow with your business."
+metaDescription: "Custom WordPress websites built for speed, usability, and growth. Clean, flexible, and easy to manage - designed to perform for your business."
 layout: "layouts/base.njk"
 permalink: "/services/custom-wordpress-development/"
 ---
 <section>
-  <!-- Hero Section -->
+  
   <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-16">
     <div class="mx-auto max-w-4xl text-center">
       <h1 class="mt-6 block max-w-5xl font-display text-5xl font-medium tracking-tight [text-wrap:balance] sm:text-6xl mx-auto">Custom WordPress sites built for performance and simplicity.</h1>
       <p class="mt-6 text-xl leading-8 mx-auto max-w-3xl">Bespoke WordPress development that prioritises clean code, exceptional performance, and intuitive content management - without the complexity of bloated themes or page builders.</p>
-      <!-- Accent: hero underline bar -->
+      
       <div class="h-1 w-24 bg-service-wordpress mx-auto mt-6 rounded-full" aria-hidden="true"></div>
     </div>
   </div>
 
-  <!-- Main Content -->
   <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-20">
     <div class="mx-auto max-w-4xl">
       
-      <!-- Section 1: Built for your business -->
+      
       <div class="mb-16">
         <h2 class="text-3xl font-bold mb-2">Built for your business</h2>
         <div class="h-1 w-16 bg-service-wordpress rounded-full mb-6" aria-hidden="true"></div>
@@ -38,7 +37,7 @@ permalink: "/services/custom-wordpress-development/"
         </div>
       </div>
 
-      <!-- Section 2: Performance by design -->
+        
       <div class="mb-16">
         <h2 class="text-3xl font-bold mb-2">Performance by design</h2>
         <div class="h-1 w-16 bg-service-wordpress rounded-full mb-6" aria-hidden="true"></div>
@@ -47,7 +46,7 @@ permalink: "/services/custom-wordpress-development/"
         </div>
       </div>
 
-      <!-- Section 3: Designed for growth -->
+        
       <div class="mb-16">
         <h2 class="text-3xl font-bold mb-2">Designed for growth</h2>
         <div class="h-1 w-16 bg-service-wordpress rounded-full mb-6" aria-hidden="true"></div>
@@ -56,7 +55,7 @@ permalink: "/services/custom-wordpress-development/"
         </div>
       </div>
 
-      <!-- Section 4: Why it works -->
+        
       <div class="mb-16">
         <h2 class="text-3xl font-bold mb-2">Why it works</h2>
         <div class="h-1 w-16 bg-service-wordpress rounded-full mb-6" aria-hidden="true"></div>
@@ -88,7 +87,7 @@ permalink: "/services/custom-wordpress-development/"
         </div>
       </div>
 
-      <!-- CTA Section -->
+      
       <div class="bg-service-wordpress p-12 rounded-xl text-center">
         <h2 class="text-3xl font-bold mb-6 text-black">Start your custom WordPress build</h2>
         <a href="/book/" class="inline-flex items-center px-8 py-4 text-lg font-semibold bg-white text-black rounded-lg hover:bg-gray-100 transition-colors duration-300">
@@ -100,3 +99,14 @@ permalink: "/services/custom-wordpress-development/"
     </div>
   </div>
 </section>
+{% include "components/local-business-schema.njk" %}
+{% set service = {
+  name: "Custom WordPress Development",
+  description: "Custom WordPress websites built for speed, usability, and growth. Clean, flexible, and easy to manage — designed to perform for your business.",
+  url: "https://romanwaters.com/services/custom-wordpress-development/",
+  provider: {
+    name: "Roman Waters",
+    url: "https://romanwaters.com/"
+  }
+} %}
+{% include "components/service-schema.njk" %}
