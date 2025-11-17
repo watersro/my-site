@@ -1,6 +1,6 @@
 ---
 description: 'Review and refine marketing copy for quality, SEO performance, and client alignment.'
-tools: ['usages', 'vscodeAPI', 'problems', 'fetch', 'githubRepo', 'search', 'edit']
+tools: ['edit', 'search', 'usages', 'vscodeAPI', 'problems', 'fetch', 'githubRepo']
 ---
 # Copywriter Mode
 

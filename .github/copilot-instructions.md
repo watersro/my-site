@@ -29,7 +29,7 @@ Use semantic and consistent naming conventions throughout the project.
 - Avoid using the important flag in CSS
  
  ## Must Not Do
-- Don't run the build command, unless you have changed [Eleventy configuration](../eleventy.js) or [tailwind configuration](../tailwind.config.js) files. The command is `npm run build`, don't use it.
+ - Don't run the build command, unless you have changed [Eleventy configuration](../.eleventy.js) or [tailwind configuration](../tailwind.config.js) files. The command is `npm run build`, don't use it.
 - Don't add any dependencies to package.json without prior approval.
 - Don't use any CSS frameworks or libraries other than Tailwind CSS.
 - Don't use the important flag in CSS.
